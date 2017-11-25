@@ -1,0 +1,34 @@
+{
+  "name": "sokolnikov911/yandex-turbo-pages",
+  "type": "library",
+  "description": "Simple Yandex Turbo Pages RSS writer library for PHP 7 or later.",
+  "keywords": [
+    "yandex",
+    "turbo",
+    "rss",
+    "generator",
+    "writer",
+    "feed",
+    "php"
+  ],
+  "version": "v0.9.1",
+  "homepage": "https://github.com/sokolnikov91/yandex-turbo-pages",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Petro Sokolnykov",
+      "email": "info@xyz.net.ua",
+      "homepage": "https://github.com/sokolnikov911"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-0": {
+      "sokolnikov911\\YandexTurboPages": "src"
+    }
+  }
+}
