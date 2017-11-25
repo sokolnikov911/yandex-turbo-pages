@@ -28,7 +28,7 @@ $channel
     ->link('http://blog.example.com')
     ->description('Channel Description')
     ->language('ru')
-    ->adNetwork(Channel::AD_TYPE_YANDEX, 123456, 'first_ad_place')
+    ->adNetwork(Channel::AD_TYPE_YANDEX, 1234567, 'first_ad_place')
     ->appendTo($feed);
 
 // adds Google Analytics to feed

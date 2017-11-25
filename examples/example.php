@@ -18,7 +18,7 @@ $channel
 $googleCounter = new Counter(Counter::TYPE_GOOGLE_ANALYTICS, 'XX-1234567-89');
 $googleCounter->appendTo($channel);
 
-$yandexCounter = new Counter(Counter::TYPE_YANDEX, 12345678);
+$yandexCounter = new Counter(Counter::TYPE_YANDEX, 1234567);
 $yandexCounter->appendTo($channel);
 
 $item = new Item();
