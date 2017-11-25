@@ -16,7 +16,7 @@ at least PHP7.
 
 This example you can find in `examples/example.php`
 
-```
+```php
 // creates Feed with all needed namespaces
 $feed = new Feed();
 
