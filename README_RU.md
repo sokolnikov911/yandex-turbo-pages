@@ -41,6 +41,7 @@ $yandexCounter->appendTo($channel);
 // добавляем первую турбо-страницу с необходимым описанием и прикрепляем ее к каналу
 $item = new Item();
 $item
+    ->title('Thirst page!')
     ->link('http://www.example.com/page1.html')
     ->author('John Smith')
     ->category('Technology')
@@ -67,6 +68,7 @@ $relatedItemsList
 // создаем еще одну турбо-страницу
 $item = new Item();
 $item
+    ->title('Second page!')
     ->link('http://www.example.com/page2.html')
     ->author('John Smith')
     ->category('Technology')

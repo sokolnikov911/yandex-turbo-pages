@@ -10,43 +10,50 @@ interface ItemInterface
 {
     /**
      * Set item URL
+     * @param string $title
+     * @return ItemInterface
+     */
+    public function title(string $title): ItemInterface;
+
+    /**
+     * Set item URL
      * @param string $link
-     * @return $this
+     * @return ItemInterface
      */
     public function link(string $link): ItemInterface;
 
     /**
      * Set page content
      * @param string $turboContent
-     * @return $this
+     * @return ItemInterface
      */
     public function turboContent(string $turboContent): ItemInterface;
 
     /**
      * Set item category
      * @param string $category Category name
-     * @return $this
+     * @return ItemInterface
      */
     public function category(string $category): ItemInterface;
 
     /**
      * Set published date
      * @param int $pubDate Unix timestamp
-     * @return $this
+     * @return ItemInterface
      */
     public function pubDate(int $pubDate): ItemInterface;
 
     /**
      * Set the author
      * @param string $author Email of item author
-     * @return $this
+     * @return ItemInterface
      */
     public function author(string $author): ItemInterface;
 
     /**
      * Append item to the channel
      * @param ChannelInterface $channel
-     * @return $this
+     * @return ItemInterface
      */
     public function appendTo(ChannelInterface $channel): ItemInterface;
 

@@ -42,6 +42,7 @@ $yandexCounter->appendTo($channel);
 // creates first page of feed with link, description and other content, and appends this page to channel
 $item = new Item();
 $item
+    ->title('Thirst page!')
     ->link('http://www.example.com/page1.html')
     ->author('John Smith')
     ->category('Technology')
@@ -68,6 +69,7 @@ $relatedItemsList
 // creates another one page
 $item = new Item();
 $item
+    ->title('Second page!')
     ->link('http://www.example.com/page2.html')
     ->author('John Smith')
     ->category('Technology')
