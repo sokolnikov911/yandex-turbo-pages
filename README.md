@@ -14,7 +14,7 @@ at least PHP7.
 
 ## Examples
 
-**Retrieving schedule between two stations (for example: New Your airport and Moscow Sheremetyevo)**
+This example you can find in `examples/example.php`
 
 ```
 // creates Feed with all needed namespaces
