@@ -47,8 +47,6 @@ class SimpleXMLElement extends SimpleXMLE
     private function convertSymbols(string $content): string
     {
         $content = str_replace('&',  '&amp;',  $content);
-        $content = str_replace('"',  '&quot;', $content);
-        $content = str_replace('\'', '&apos;', $content);
         
         return $content;
     }
