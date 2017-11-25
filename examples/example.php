@@ -26,7 +26,7 @@ $item
     ->link('http://www.example.com/page1.html')
     ->author('John Smith')
     ->category('Technology')
-    ->turboContent('Some content here!')
+    ->turboContent('Some content here!<br>Second content string.')
     ->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
     ->appendTo($channel);
 

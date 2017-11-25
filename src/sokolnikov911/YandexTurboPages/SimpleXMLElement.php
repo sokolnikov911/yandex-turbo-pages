@@ -37,6 +37,14 @@ class SimpleXMLElement extends SimpleXMLE
      */
     public function addCdataChild($name, $value = null, $namespace = null): SimpleXMLE
     {
+        if ($value !== null and is_string($value) === true) {
+            $value = str_replace('&',  '&amp;',  $value);
+            $value = str_replace('>',  '&gt;',   $value);
+            $value = str_replace('<',  '&lt;',   $value);
+            $value = str_replace('"',  '&quot;', $value);
+            $value = str_replace('\'', '&apos;', $value);
+        }
+
         $element = $this->addChild($name, null, $namespace);
         $dom = dom_import_simplexml($element);
         $elementOwner = $dom->ownerDocument;
