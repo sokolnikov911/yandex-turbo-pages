@@ -12,7 +12,7 @@ $channel
     ->link('http://blog.example.com')
     ->description('Channel Description')
     ->language('ru')
-    ->adNetwork(Channel::AD_TYPE_YANDEX, 123456, 'first_ad_place')
+    ->adNetwork(Channel::AD_TYPE_YANDEX, 'RA-123456-7', 'first_ad_place')
     ->appendTo($feed);
 
 $googleCounter = new Counter(Counter::TYPE_GOOGLE_ANALYTICS, 'XX-1234567-89');
