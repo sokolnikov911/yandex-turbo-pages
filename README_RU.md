@@ -6,6 +6,8 @@ PHP7 RSS feed генератор для Турбо-страниц Яндекса
 [![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
 [![License](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/license)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
 [![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
+[![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
+[![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
 
 
 Генератор валидного RSS потока для Турбо-страниц Яндекса. Для этой работы этой версии пакета

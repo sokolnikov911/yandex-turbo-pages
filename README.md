@@ -6,6 +6,8 @@ PHP7 Yandex Turbo Pages RSS feed generator
 [![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
 [![License](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/license)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
 [![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
+[![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
+[![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
 
 Russian version of README you can find here: [README_RU.md](https://github.com/sokolnikov911/yandex-turbo-pages/blob/master/README_RU.md).
 
