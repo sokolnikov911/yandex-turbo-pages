@@ -14,6 +14,7 @@ Russian version of README you can find here: [README_RU.md](https://github.com/s
 Yandex Turbo Pages valid RSS feed generator for PHP7+. In this version type hinting used, so you need
 at least PHP7.
 
+Version for PHP5.4 you can find [here](https://github.com/sokolnikov911/yandex-turbo-pages-php5).
 
 ## Examples
 
