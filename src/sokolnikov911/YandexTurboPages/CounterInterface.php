@@ -20,11 +20,11 @@ interface CounterInterface
      * @param ChannelInterface $channel
      * @return $this
      */
-    public function appendTo(ChannelInterface $channel);
+    public function appendTo(ChannelInterface $channel): CounterInterface;
 
     /**
      * Return XML object
      * @return SimpleXMLElement
      */
-    public function asXML();
+    public function asXML(): SimpleXMLElement;
 }

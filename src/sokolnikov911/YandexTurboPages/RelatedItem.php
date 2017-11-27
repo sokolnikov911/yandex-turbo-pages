@@ -17,7 +17,7 @@ class RelatedItem implements RelatedItemInterface
     /** @var string */
     protected $img;
 
-    public function __construct( string $title, string $link, string $img = '')
+    public function __construct(string $title, string $link, string $img = '')
     {
         $this->link = $link;
         $this->title = $title;

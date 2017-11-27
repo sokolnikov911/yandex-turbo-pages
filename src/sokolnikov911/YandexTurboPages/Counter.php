@@ -18,18 +18,20 @@ class Counter implements CounterInterface
     private $type;
     private $id;
 
-    public function __construct(string $type, string $id){
+    public function __construct(string $type, string $id)
+    {
         $this->type = $type;
         $this->id = $id;
     }
 
-    public function appendTo(ChannelInterface $channel)
+    public function appendTo(ChannelInterface $channel): CounterInterface
     {
         $channel->addCounter($this);
         return $this;
     }
 
-    public function asXML(){
+    public function asXML(): SimpleXMLElement
+    {
         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><yandex:analytics id="'
             . $this->id . '"  type="' . $this->type . '"></yandex:analytics>',
             LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);

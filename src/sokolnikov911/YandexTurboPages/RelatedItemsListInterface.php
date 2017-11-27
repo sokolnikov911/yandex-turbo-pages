@@ -3,7 +3,7 @@
 namespace sokolnikov911\YandexTurboPages;
 
 /**
- * Interface RelatedItemsInterface
+ * Interface RelatedItemsListInterface
  * @package sokolnikov911\YandexTurboPages
  */
 interface RelatedItemsListInterface
