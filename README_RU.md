@@ -97,7 +97,7 @@ curl -sS https://getcomposer.org/installer | php
 Потом запускаем комманду композера для установки последней версии пакета **yandex-turbo-pages**
 
 ```bash
-php composer.phar require sokolnikov911/yandex-turbo-pages-php5
+php composer.phar require sokolnikov911/yandex-turbo-pages
 ```
 
 Подключаем автолоадер композора в файле, который является точкой входа в приложение (если это не было сделано ранее)
