@@ -9,7 +9,7 @@ namespace sokolnikov911\YandexTurboPages;
 interface ItemInterface
 {
     /**
-     * Set counter type and ID
+     * Set turbo mode
      * @param bool $turbo
      */
     public function __construct(bool $turbo);
