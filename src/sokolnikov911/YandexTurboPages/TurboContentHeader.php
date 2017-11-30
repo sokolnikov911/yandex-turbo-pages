@@ -39,7 +39,7 @@ class TurboContentHeader implements TurboContentHeaderInterface
 
     public function asHTML(): string
     {
-        $DOMDoc = new DOMDocument();
+        $DOMDoc = new DOMDocument('1.0', 'UTF-8');
 
         $titleH2 = $this->titleH2 ? $this->titleH2 : '';
 
@@ -61,6 +61,6 @@ class TurboContentHeader implements TurboContentHeaderInterface
             $headerDOMElement->appendChild($figureDOMElement);
         }
 
-        return strval($DOMDoc->saveHTML());
+        return strval(html_entity_decode($DOMDoc->saveHTML()));
     }
 }
