@@ -37,7 +37,7 @@ interface ChannelInterface
     public function language(string $language): ChannelInterface;
 
     /**
-     * Set ISO 639-1 language code
+     * Add ad to channel
      * @param string $type Type of Ad Network: Yandex or ADFOX
      * @param string $id Id of Yandex Ad block, if Yandex Ad network used
      * @param string $turboAdId Id of <figure> element in content, in which Ad block should placed

@@ -9,7 +9,7 @@ namespace sokolnikov911\YandexTurboPages;
 interface RelatedItemInterface
 {
     /**
-     * Set item URL
+     * Create RelatedItem object with data
      * @param string $link
      * @param string $title
      * @param string $img
@@ -17,7 +17,7 @@ interface RelatedItemInterface
     public function __construct(string $title, string $link, string $img = '');
 
     /**
-     * Append item to the channel
+     * Append RelatedItem to the RelatedItemsList
      * @param RelatedItemsListInterface $relatedItemsList
      * @return RelatedItemInterface
      */
