@@ -9,6 +9,12 @@ namespace sokolnikov911\YandexTurboPages;
 interface ItemInterface
 {
     /**
+     * Set counter type and ID
+     * @param bool $turbo
+     */
+    public function __construct(bool $turbo);
+
+    /**
      * Set item URL
      * @param string $title
      * @return ItemInterface

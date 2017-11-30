@@ -42,7 +42,7 @@ $googleCounter->appendTo($channel);
 $yandexCounter = new Counter(Counter::TYPE_YANDEX, 12345678);
 $yandexCounter->appendTo($channel);
 
-// creates first page of feed with link, description and other content, and appends this page to channel
+// creates first page of feed with link and enabled turbo, description and other content, and appends this page to channel
 $item = new Item();
 $item
     ->title('Thirst page!')
@@ -69,8 +69,8 @@ $relatedItem->appendTo($relatedItemsList);
 $relatedItemsList
     ->appendTo($item);
 
-// creates another one page
-$item = new Item();
+// creates another one page with disabled turbo
+$item = new Item(false);
 $item
     ->title('Second page!')
     ->link('http://www.example.com/page2.html')

@@ -68,6 +68,18 @@ class ItemTest extends TestCase
         $this->assertAttributeSame([$item], 'items', $channel);
     }
 
+    public function testTurboAttributeEnabled()
+    {
+        $item = new Item(true);
+        $this->assertAttributeSame(true, 'turbo', $item);
+    }
+
+    public function testTurboAttributeDisabled()
+    {
+        $item = new Item(false);
+        $this->assertAttributeSame(false, 'turbo', $item);
+    }
+
     public function testCdataTurboContent()
     {
         $content = '<div>content</div>';
@@ -123,6 +135,33 @@ class ItemTest extends TestCase
 
         $expect = '
         <item turbo="true">
+            <title>' . $data['title'] . '</title>
+            <link>' . $data['link'] . '</link>
+            <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>
+            <pubDate>' . $data['pubDate'] . '</pubDate>
+            <category>' . $data['category'] . '</category>
+            <author>' . $data['author'] . '</author>
+        </item>
+        ';
+
+        $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
+    }
+
+    public function testAsXMLWithDisabledTurbo()
+    {
+        $data = $this->dataForXmlTests();
+
+        $item = new Item(false);
+        $item
+            ->author($data['author'])
+            ->pubDate($data['now'])
+            ->title($data['title'])
+            ->link($data['link'])
+            ->turboContent($data['turboContent'])
+            ->category($data['category']);
+
+        $expect = '
+        <item turbo="false">
             <title>' . $data['title'] . '</title>
             <link>' . $data['link'] . '</link>
             <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>

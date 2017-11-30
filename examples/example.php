@@ -21,6 +21,7 @@ $googleCounter->appendTo($channel);
 $yandexCounter = new Counter(Counter::TYPE_YANDEX, 1234567);
 $yandexCounter->appendTo($channel);
 
+// Item with enabled turbo mode
 $item = new Item();
 $item
     ->title('Thirst page!')
@@ -43,7 +44,8 @@ $relatedItem->appendTo($relatedItemsList);
 $relatedItemsList
     ->appendTo($item);
 
-$item = new Item();
+// Item with disabled turbo mode
+$item = new Item(false);
 $item
     ->title('Second page!')
     ->link('http://www.example.com/page2.html')

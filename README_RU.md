@@ -42,7 +42,7 @@ $googleCounter->appendTo($channel);
 $yandexCounter = new Counter(Counter::TYPE_YANDEX, 12345678);
 $yandexCounter->appendTo($channel);
 
-// добавляем первую турбо-страницу с необходимым описанием и прикрепляем ее к каналу
+// добавляем первую турбо-страницу с активированным турбо-режимом, необходимым описанием, и прикрепляем ее к каналу
 $item = new Item();
 $item
     ->title('Thirst page!')
@@ -69,8 +69,8 @@ $relatedItem->appendTo($relatedItemsList);
 $relatedItemsList
     ->appendTo($item);
 
-// создаем еще одну турбо-страницу
-$item = new Item();
+// создаем еще одну турбо-страницу с деактивированным турбо-режимом
+$item = new Item(false);
 $item
     ->title('Second page!')
     ->link('http://www.example.com/page2.html')

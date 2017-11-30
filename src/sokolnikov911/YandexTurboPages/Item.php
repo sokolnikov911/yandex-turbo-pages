@@ -9,6 +9,9 @@ namespace sokolnikov911\YandexTurboPages;
 class Item implements ItemInterface
 {
     /** @var string */
+    protected $turbo;
+
+    /** @var string */
     protected $title;
 
     /** @var string */
@@ -28,6 +31,11 @@ class Item implements ItemInterface
 
     /** @var RelatedItemsListInterface */
     protected $relatedItemsList;
+
+    public function __construct(bool $turbo = true)
+    {
+        $this->turbo = $turbo;
+    }
 
     public function title(string $title): ItemInterface
     {
@@ -79,7 +87,10 @@ class Item implements ItemInterface
 
     public function asXML(): SimpleXMLElement
     {
-        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><item turbo="true"></item>', LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);
+        $isTurboEnabled = $this->turbo ? 'true' : 'false';
+
+        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><item turbo="' . $isTurboEnabled
+            . '"></item>', LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);
 
         $xml->addChild('title', $this->title);
         $xml->addChild('link', $this->link);
