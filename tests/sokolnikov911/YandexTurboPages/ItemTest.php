@@ -23,7 +23,7 @@ class ItemTest extends TestCase
     public function testLongTitle()
     {
         $longTitle = 'bLm9hNfgHXiMcn2RizL4UeYdVJZv3bYE5hesuRO7CBPXBobFjEq3v62Mo0nxMKLEC0qQugUl7p4iNZMRbzXLkPSdt92ANNYtVmFXIvemTiqiJ8sg0InzjUcybWu1tflOFlj160ncNHJ3UKECvX8iSRqSwm0om3KgTkolqtE4c1aXqQshEeZ3yyK6dfTmc71Ng6UKXXIHuczx2E327cZi90itBN19SPIG147GjdxBl4EOJq8gejojIHNAh15X0LTQhtcL';
-        $title = substr($longTitle, 0, 239) . '…';
+        $title = mb_substr($longTitle, 0, 239) . '…';
         $item = new Item();
         $this->assertSame($item, $item->title($longTitle));
         $this->assertAttributeSame($title, 'title', $item);

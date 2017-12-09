@@ -43,7 +43,7 @@ class Channel implements ChannelInterface
 
     public function title(string $title): ChannelInterface
     {
-        $title = (strlen($title) > 240) ? substr($title, 0, 239) . '…' : $title;
+        $title = (mb_strlen($title) > 240) ? mb_substr($title, 0, 239) . '…' : $title;
         $this->title = $title;
         return $this;
     }
