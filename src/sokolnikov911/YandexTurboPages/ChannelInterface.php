@@ -44,7 +44,7 @@ interface ChannelInterface
      * @param string $code ADFOX code, if ADFOX used
      * @return ChannelInterface
      */
-    public function adNetwork(string $type, string $id = '', string $turboAdId = '', string $code = ''): ChannelInterface;
+    public function adNetwork(string $type, string $id = '', string $turboAdId, string $code = ''): ChannelInterface;
 
     /**
      * Add item object

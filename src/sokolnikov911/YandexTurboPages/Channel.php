@@ -67,7 +67,7 @@ class Channel implements ChannelInterface
     }
 
     public function adNetwork(string $type = self::AD_TYPE_YANDEX, string $id = '',
-                              string $turboAdId = '', string $code = ''): ChannelInterface
+                              string $turboAdId, string $code = ''): ChannelInterface
     {
         $this->adType      = $type;
         $this->adId        = $id;
