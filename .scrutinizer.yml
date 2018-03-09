@@ -3,7 +3,7 @@ build:
         php70:
             environment:
                 php:
-                    version: 7.0
+                    version: 7.0.20
             tests:
                 override:
                     -
@@ -14,7 +14,7 @@ build:
         php71:
             environment:
                 php:
-                    version: 7.1
+                    version: 7.1.12
             tests:
                 override:
                     -
@@ -25,7 +25,7 @@ build:
         php72:
             environment:
                 php:
-                    version: 7.2
+                    version: 7.2.0
             tests:
                 override:
                     -
