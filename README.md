@@ -1,17 +1,11 @@
 PHP7 Yandex Turbo Pages RSS feed generator
 =====================================
 
-[![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/downloads)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
-[![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
-
-Travis CI: [![Build Status](https://travis-ci.org/sokolnikov911/yandex-turbo-pages.svg?branch=master)](https://travis-ci.org/sokolnikov911/yandex-turbo-pages)
-
-Scrutinizer CI: [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages/build-status/master)
+|  |  |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  | [![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages) [![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/downloads)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages) [![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages) [![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages) [![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages) [![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages) |
+| Travis CI | [![Build Status](https://travis-ci.org/sokolnikov911/yandex-turbo-pages.svg?branch=master)](https://travis-ci.org/sokolnikov911/yandex-turbo-pages) |
+| Scrutinizer CI | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages/build-status/master) |
 
 Russian version of README you can find here: [README_RU.md](https://github.com/sokolnikov911/yandex-turbo-pages/blob/master/README_RU.md).
 
