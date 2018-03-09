@@ -11,7 +11,7 @@
     "feed",
     "php"
   ],
-  "version": "v1.0.3",
+  "version": "v1.0.4",
   "homepage": "https://github.com/sokolnikov91/yandex-turbo-pages",
   "license": "MIT",
   "authors": [
@@ -22,7 +22,8 @@
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "ext-mbstring": "*"
   },
   "require-dev": {
     "phpunit/phpunit": ">=6.4.4",

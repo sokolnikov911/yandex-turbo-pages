@@ -8,13 +8,14 @@ PHP7 Yandex Turbo Pages RSS feed generator
 [![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
 [![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
 [![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
+[![Build Status](https://travis-ci.org/sokolnikov911/yandex-turbo-pages.svg?branch=master)](https://travis-ci.org/sokolnikov911/yandex-turbo-pages)
 
 Russian version of README you can find here: [README_RU.md](https://github.com/sokolnikov911/yandex-turbo-pages/blob/master/README_RU.md).
 
-Yandex Turbo Pages valid RSS feed generator for PHP7+. In this version type hinting used, so you need
-at least PHP7.
+Yandex Turbo Pages valid RSS feed generator for PHP 7+. In this version type hinting used, so you need
+at least PHP 7.0.
 
-Version for PHP5.4 you can find [here](https://github.com/sokolnikov911/yandex-turbo-pages-php5).
+Version for PHP 5.4 you can find [here](https://github.com/sokolnikov911/yandex-turbo-pages-php5).
 
 ## Examples
 
@@ -115,7 +116,7 @@ composer.phar update
  
 ## Requirements
 
-This Yandex Trurbo Pages RSS feed generator requires at least PHP7 (yeahh, type hinting!).
+This Yandex Trurbo Pages RSS feed generator requires at least PHP 7.0 (yeahh, type hinting!).
 
 
 ## License

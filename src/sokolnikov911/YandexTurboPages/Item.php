@@ -39,6 +39,7 @@ class Item implements ItemInterface
 
     public function title(string $title): ItemInterface
     {
+        $title = (mb_strlen($title) > 240) ? mb_substr($title, 0, 239) . '…' : $title;
         $this->title = $title;
         return $this;
     }
