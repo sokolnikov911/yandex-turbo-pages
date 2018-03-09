@@ -8,7 +8,7 @@ namespace sokolnikov911\YandexTurboPages;
  */
 class Item implements ItemInterface
 {
-    /** @var string */
+    /** @var boolean */
     protected $turbo;
 
     /** @var string */
