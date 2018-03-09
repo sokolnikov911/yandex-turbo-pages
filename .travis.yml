@@ -17,7 +17,7 @@ install:
   - composer install --prefer-dist
 
 script:
-  - vendor/bin/phpunit --coverage-text
+  - vendor/bin/phpunit --coverage-clover=tests/cover
 
 cache:
   directories:

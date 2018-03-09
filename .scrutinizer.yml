@@ -17,7 +17,7 @@ build:
                         command: 'phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
-                            format: 'clover'
+                            format: php-clover
         php71:
             environment:
                 php:
@@ -28,7 +28,7 @@ build:
                         command: 'phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
-                            format: 'clover'
+                            format: php-clover
         php72:
             environment:
                 php:
@@ -39,7 +39,7 @@ build:
                         command: 'phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
-                            format: 'clover'
+                            format: php-clover
 
     environment:
         php:
@@ -50,7 +50,7 @@ build:
                 command: 'phpunit --coverage-clover=tests/cover'
                 coverage:
                     file: 'tests/cover'
-                    format: 'clover'
+                    format: php-clover
 
 filter:
     excluded_paths: [vendor/*, tests/*, examples/*]
