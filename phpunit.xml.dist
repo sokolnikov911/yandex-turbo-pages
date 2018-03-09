@@ -13,13 +13,13 @@
 
     <logging>
         <log
-                type="coverage-html"
+                type="coverage-clover"
                 target="tests/cover"
                 charset="UTF-8"
                 yui="true"
-                highlight="false"
-                lowUpperBound="35"
-                highLowerBound="70"/>
+                highlight="true"
+                lowUpperBound="50"
+                highLowerBound="80"/>
     </logging>
 
     <filter>
