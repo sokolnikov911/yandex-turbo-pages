@@ -1,3 +1,10 @@
+tools:
+    php_sim: false
+    php_pdepend: true
+    php_analyzer: true
+    php_code_coverage: true
+    external_code_coverage: false
+
 build:
     nodes:
         php70:
@@ -33,3 +40,17 @@ build:
                         coverage:
                             file: 'tests/cover'
                             format: 'clover'
+
+    environment:
+        php:
+            version: 7.2
+    tests:
+        override:
+            -
+                command: 'phpunit --coverage-clover=tests/cover'
+                coverage:
+                    file: 'tests/cover'
+                    format: 'clover'
+
+filter:
+    excluded_paths: [vendor/*, tests/*, examples/*]
