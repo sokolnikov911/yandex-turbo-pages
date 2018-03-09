@@ -9,7 +9,7 @@ build:
                     -
                         command: 'phpunit --coverage-clover=tests/cover'
                         coverage:
-                            file: 'cover'
+                            file: 'tests/cover'
                             format: 'clover'
         php71:
             environment:
@@ -20,7 +20,7 @@ build:
                     -
                         command: 'phpunit --coverage-clover=tests/cover'
                         coverage:
-                            file: 'cover'
+                            file: 'tests/cover'
                             format: 'clover'
         php72:
             environment:
@@ -31,5 +31,5 @@ build:
                     -
                         command: 'phpunit --coverage-clover=tests/cover'
                         coverage:
-                            file: 'cover'
+                            file: 'tests/cover'
                             format: 'clover'
