@@ -16,7 +16,7 @@ build:
             tests:
                 override:
                     -
-                        command: 'phpunit --coverage-clover=tests/cover'
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
                             format: php-clover
@@ -29,7 +29,7 @@ build:
             tests:
                 override:
                     -
-                        command: 'phpunit --coverage-clover=tests/cover'
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
                             format: php-clover
@@ -42,7 +42,7 @@ build:
             tests:
                 override:
                     -
-                        command: 'phpunit --coverage-clover=tests/cover'
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
                             format: php-clover
@@ -55,7 +55,7 @@ build:
     tests:
         override:
             -
-                command: 'phpunit --coverage-clover=tests/cover'
+                command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                 coverage:
                     file: 'tests/cover'
                     format: php-clover
