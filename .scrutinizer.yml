@@ -9,6 +9,8 @@ build:
     nodes:
         php70:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 7.0.20
             tests:
@@ -20,6 +22,8 @@ build:
                             format: php-clover
         php71:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 7.1.12
             tests:
@@ -31,6 +35,8 @@ build:
                             format: php-clover
         php72:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 7.2.0
             tests:
@@ -42,6 +48,8 @@ build:
                             format: php-clover
 
     environment:
+        postgresql: false
+        redis: false
         php:
             version: 7.2
     tests:
