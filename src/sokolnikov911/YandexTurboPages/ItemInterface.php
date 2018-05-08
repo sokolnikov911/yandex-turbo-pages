@@ -30,6 +30,20 @@ interface ItemInterface
 
     /**
      * Set page content
+     * @param string $turboSource
+     * @return ItemInterface
+     */
+    public function turboSource(string $turboSource): ItemInterface;
+
+    /**
+     * Set page content
+     * @param string $turboTopic
+     * @return ItemInterface
+     */
+    public function turboTopic(string $turboTopic): ItemInterface;
+
+    /**
+     * Set page content
      * @param string $turboContent
      * @return ItemInterface
      */

@@ -27,6 +27,12 @@ class Item implements ItemInterface
     protected $author;
 
     /** @var string */
+    protected $turboSource;
+
+    /** @var string */
+    protected $turboTopic;
+
+    /** @var string */
     protected $turboContent;
 
     /** @var RelatedItemsListInterface */
@@ -59,6 +65,18 @@ class Item implements ItemInterface
     public function pubDate(int $pubDate): ItemInterface
     {
         $this->pubDate = $pubDate;
+        return $this;
+    }
+
+    public function turboSource(string $turboSource): ItemInterface
+    {
+        $this->turboSource = $turboSource;
+        return $this;
+    }
+
+    public function turboTopic(string $turboTopic): ItemInterface
+    {
+        $this->turboTopic = $turboTopic;
         return $this;
     }
 
@@ -104,6 +122,14 @@ class Item implements ItemInterface
 
         if (!empty($this->author)) {
             $xml->addChild('author', $this->author);
+        }
+
+        if (!empty($this->turboTopic)) {
+            $xml->addChild('turbo:topic', $this->turboTopic, 'http://turbo.yandex.ru');
+        }
+
+        if (!empty($this->turboSource)) {
+            $xml->addChild('turbo:source', $this->turboSource, 'http://turbo.yandex.ru');
         }
 
         if ($this->relatedItemsList) {

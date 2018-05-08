@@ -67,7 +67,7 @@ class CounterTest extends TestCase
         new Counter($counterType, $counterId, $counterUrl);
     }
 
-    public function testAsXML()
+    public function testNonCustomCounterAsXML()
     {
         $counterType = uniqid();
         $counterId = uniqid();
@@ -76,6 +76,19 @@ class CounterTest extends TestCase
 
         $expect = '
             <yandex:analytics id="' . $counterId . '" type="' . $counterType . '"/>
+        ';
+        $this->assertXmlStringEqualsXmlString($expect, $counter->asXML()->asXML());
+    }
+
+    public function testCustomCounterAsXML()
+    {
+        $counterType = Counter::TYPE_CUSTOM;
+        $counterUrl = uniqid();
+
+        $counter = new Counter($counterType, null, $counterUrl);
+
+        $expect = '
+            <yandex:analytics url="' . $counterUrl . '" type="' . $counterType . '"/>
         ';
         $this->assertXmlStringEqualsXmlString($expect, $counter->asXML()->asXML());
     }

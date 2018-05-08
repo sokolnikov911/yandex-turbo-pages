@@ -1,11 +1,10 @@
 Yandex Turbo Pages Change Log
 =============================
 
-1.1.0 December 22, 2017
+1.1.0 May 8, 2018
 --------------------
-* Enh: added requiring for mbstring;
-* Enh: added title length limitation;
-* Enh: turboAdId attribute is required now for adNetwork method.
+* Enh: added possibility to add custom counter;
+* Enh: added possibility to add turbo:topic and turbo:source attributes for Item;
 
 1.0.4 December 22, 2017
 --------------------

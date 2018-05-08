@@ -37,6 +37,22 @@ class ItemTest extends TestCase
         $this->assertAttributeSame($link, 'link', $item);
     }
 
+    public function testTurboSource()
+    {
+        $turboSource = uniqid();
+        $item = new Item();
+        $this->assertSame($item, $item->turboSource($turboSource));
+        $this->assertAttributeSame($turboSource, 'turboSource', $item);
+    }
+
+    public function testTurboTopic()
+    {
+        $turboTopic = uniqid();
+        $item = new Item();
+        $this->assertSame($item, $item->turboTopic($turboTopic));
+        $this->assertAttributeSame($turboTopic, 'turboTopic', $item);
+    }
+
     public function testTurboContent()
     {
         $turboContent = uniqid();
@@ -140,6 +156,8 @@ class ItemTest extends TestCase
             ->title($data['title'])
             ->link($data['link'])
             ->turboContent($data['turboContent'])
+            ->turboSource($data['link'])
+            ->turboTopic($data['title'])
             ->category($data['category']);
 
         $expect = '
@@ -148,8 +166,10 @@ class ItemTest extends TestCase
             <link>' . $data['link'] . '</link>
             <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>
             <pubDate>' . $data['pubDate'] . '</pubDate>
-            <category>' . $data['category'] . '</category>
-            <author>' . $data['author'] . '</author>
+            <category>' . $data['category'] . '</category>            
+            <author>' . $data['author'] . '</author>                        
+            <turbo:topic xmlns:turbo="http://turbo.yandex.ru">' . $data['title'] . '</turbo:topic>
+            <turbo:source xmlns:turbo="http://turbo.yandex.ru">' . $data['link'] . '</turbo:source>
         </item>
         ';
 

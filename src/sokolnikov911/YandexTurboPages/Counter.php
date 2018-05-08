@@ -43,8 +43,11 @@ class Counter implements CounterInterface
 
     public function asXML(): SimpleXMLElement
     {
-        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><yandex:analytics id="'
-            . $this->id . '"  type="' . $this->type . '"></yandex:analytics>',
+        $idPart = $this->id ? ' id="' . $this->id . '" ' : '';
+        $urlPart = $this->url ? ' url="' . $this->url . '" ' : '';
+
+        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><yandex:analytics type="'
+            . $this->type . '"' . $idPart . $urlPart . '></yandex:analytics>',
             LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);
 
         return $xml;
