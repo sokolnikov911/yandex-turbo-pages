@@ -11,9 +11,10 @@ interface CounterInterface
     /**
      * Set counter type and ID
      * @param string $type
-     * @param string $id
+     * @param string|null $id
+     * @param string|null $url
      */
-    public function __construct(string $type, string $id);
+    public function __construct(string $type, string $id = null, string $url = null);
 
     /**
      * Append counter to the channel

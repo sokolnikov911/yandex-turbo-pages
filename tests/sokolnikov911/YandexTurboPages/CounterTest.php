@@ -20,9 +20,51 @@ class CounterTest extends TestCase
     {
         $counterType = uniqid();
         $counterId = uniqid();
-        $counter = new Counter($counterType, $counterId);
+        $counterUrl = uniqid();
+        $counter = new Counter($counterType, $counterId, $counterUrl);
         $this->assertAttributeEquals($counterType, 'type', $counter);
         $this->assertAttributeEquals($counterId, 'id', $counter);
+        $this->assertAttributeEquals($counterUrl, 'url', $counter);
+    }
+
+    public function testCustomCounter()
+    {
+        $counterType = Counter::TYPE_CUSTOM;
+        $counterId = null;
+        $counterUrl = uniqid();
+        $counter = new Counter($counterType, $counterId, $counterUrl);
+        $this->assertAttributeEquals($counterType, 'type', $counter);
+        $this->assertAttributeEquals($counterId, 'id', $counter);
+        $this->assertAttributeEquals($counterUrl, 'url', $counter);
+    }
+
+    public function testCustomCounterException()
+    {
+        $counterType = Counter::TYPE_CUSTOM;
+        $counterId = null;
+        $counterUrl = null;
+        $this->expectException(\UnexpectedValueException::class);
+        new Counter($counterType, $counterId, $counterUrl);
+    }
+
+    public function testNonCustomCounter()
+    {
+        $counterType = Counter::TYPE_YANDEX;
+        $counterId = uniqid();
+        $counterUrl = null;
+        $counter = new Counter($counterType, $counterId, $counterUrl);
+        $this->assertAttributeEquals($counterType, 'type', $counter);
+        $this->assertAttributeEquals($counterId, 'id', $counter);
+        $this->assertAttributeEquals($counterUrl, 'url', $counter);
+    }
+
+    public function testNonCustomCounterException()
+    {
+        $counterType = Counter::TYPE_YANDEX;
+        $counterId = null;
+        $counterUrl = null;
+        $this->expectException(\UnexpectedValueException::class);
+        new Counter($counterType, $counterId, $counterUrl);
     }
 
     public function testAsXML()
