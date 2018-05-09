@@ -34,7 +34,7 @@ class SimpleXMLElement extends SimpleXMLE
      */
     public function addChildWithValueChecking(string $name, string $value = null, string $namespace = null)
     {
-        if ($value) {
+        if ($value !== null) {
             return $this->addChild($name, $value, $namespace);
         }
 
