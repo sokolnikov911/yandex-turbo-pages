@@ -5,10 +5,10 @@ Yandex Turbo Pages Change Log
 --------------------
 * Enh: added possibility to add custom counter;
 * Enh: added possibility to add turbo:topic and turbo:source attributes for Item;
-* Enh: added Content helper with next methods: header, img, gallery, share, button;
+* Enh: added Content helper with next methods: header, img, gallery, share, button, comments;
 * Dep: TurboContentHeader marked as deprecated. Should used Content::header instead;
 * Ref: refactored Channel and Item methods for best cyclomatic complexity value;
-* Enf: added possibility to add yandex:full-text for compatibility with Yandex News;
+* Enh: added possibility to add yandex:full-text for compatibility with Yandex News;
 
 1.0.4 December 22, 2017
 --------------------
