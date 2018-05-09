@@ -118,6 +118,83 @@ class Content
     }
 
     /**
+     * Generate comment block
+     * @param string $url URL to comments page
+     * @param array $comments multidimensional or one-dimensional array of comments,
+     * can has unlimited includes, example:
+     * [
+     *  [
+     *      'author' => 'First Author Name',
+     *      'avatar' => 'http://example.com/user1.jpg',
+     *      'title' => 'Comment Title',
+     *      'subtitle' => '2017-12-10',
+     *      'content' => 'Somme comment text',
+     *      'comments' => [
+     *          [
+     *              'author' => 'Third Author Name',
+     *              'avatar' => 'http://example.com/user3.jpg',
+     *              'title' => 'Comment Title',
+     *              'subtitle' => '2017-12-12',
+     *              'content' => 'Some answer text'
+     *          ],
+     *          [
+     *              'author' => 'Another Author Name',
+     *              'avatar' => 'http://example.com/user4.jpg',
+     *              'title' => 'Comment Title',
+     *              'subtitle' => '2017-12-13',
+     *              'content' => 'Another answer text'
+     *          ],
+     *      ]
+     *  ],
+     *  [
+     *      'author' => 'Second Author Name',
+     *      'avatar' => 'http://example.com/user2.jpg',
+     *      'title' => 'Comment Title',
+     *      'subtitle' => '2017-12-11',
+     *      'content' => 'Some comment text'
+     *  ],
+     * ]
+     * @return string
+     */
+    public static function comment(string $url, array $commentsArray): string
+    {
+        $commentBlock = self::generateCommentBlock($commentsArray);
+
+        return '<div data-block="comments" data-url="' . $url . '">' . $commentBlock . '</div>';
+    }
+
+    private static function generateCommentBlock(array $commentsArray)
+    {
+        $commentBlock = '';
+
+        foreach ($commentsArray as $commentArray) {
+            $author = isset($commentArray['author']) ? 'data-author="' . $commentArray['author'] . '"' : '';
+            $avatar = isset($commentArray['avatar']) ? 'data-avatar-url="' . $commentArray['avatar'] . '"' : '';
+            $subtitle = isset($commentArray['subtitle']) ? 'data-subtitle="' . $commentArray['subtitle'] . '"' : '';
+
+            $commentBlock .= '<div
+                        data-block="comment"
+                        ' . $author . ' 
+                        ' . $avatar . '
+                        ' . $subtitle . '                         
+                        ><div data-block="content">';
+
+            $commentBlock .= isset($commentArray['title']) ? '<header>' . $commentArray['title'] . '</header>' : '';
+            $commentBlock .= isset($commentArray['content']) ? '<p>' . $commentArray['content'] . '</p></div>' : '';
+
+            if (isset($commentArray['comments'])) {
+                $commentBlock .= '<div data-block="comments">';
+                $commentBlock .= self::generateCommentBlock($commentArray['comments']);
+                $commentBlock .= '</div>';
+            }
+
+            $commentBlock .= '</div>';
+        }
+
+        return $commentBlock;
+    }
+
+    /**
      * Generate header menu
      * @param array $menuArray array of arrays with pairs of url and title
      * [
