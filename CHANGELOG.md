@@ -1,10 +1,11 @@
 Yandex Turbo Pages Change Log
 =============================
 
-1.1.0 May 8, 2018
+1.1.0 May 9, 2018
 --------------------
 * Enh: added possibility to add custom counter;
 * Enh: added possibility to add turbo:topic and turbo:source attributes for Item;
+* Enh: added Content helper with next methods: header, img, gallery, share, button;
 
 1.0.4 December 22, 2017
 --------------------
