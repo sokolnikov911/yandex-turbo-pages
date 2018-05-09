@@ -69,6 +69,28 @@ class ChannelTest extends TestCase
         $this->assertAttributeSame($code, 'adCode', $channel);
     }
 
+    public function testYandexAdWithoutId()
+    {
+        $type = Channel::AD_TYPE_YANDEX;
+        $turboAdId = uniqid();
+
+        $channel = new Channel();
+
+        $this->expectException(\UnexpectedValueException::class);
+        $channel->adNetwork($type, '', $turboAdId);
+    }
+
+    public function testYandexAdfoxWithoutCode()
+    {
+        $type = Channel::AD_TYPE_ADFOX;
+        $turboAdId = uniqid();
+
+        $channel = new Channel();
+
+        $this->expectException(\UnexpectedValueException::class);
+        $channel->adNetwork($type, '', $turboAdId);
+    }
+
     public function testAddItem()
     {
         $item = Mockery::mock($this->itemInterface);

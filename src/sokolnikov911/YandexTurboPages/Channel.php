@@ -74,6 +74,14 @@ class Channel implements ChannelInterface
         $this->adTurboAdId = $turboAdId;
         $this->adCode      = $code;
 
+        if ($type == self::AD_TYPE_YANDEX && !$id) {
+            throw new \UnexpectedValueException('Please set id for Yandex Ad');
+        }
+
+        if ($type == self::AD_TYPE_ADFOX && !$this->adCode) {
+            throw new \UnexpectedValueException('Please set code for Adfox network');
+        }
+
         return $this;
     }
 
@@ -106,9 +114,7 @@ class Channel implements ChannelInterface
             $xml->addChild('language', $this->language);
         }
 
-        if ($this->adType &&
-            ((($this->adType == Channel::AD_TYPE_YANDEX) && $this->adId) ||
-                (($this->adType == Channel::AD_TYPE_ADFOX) && $this->adCode))) {
+        if ($this->adType) {
 
             $adChild = $xml->addChild('yandex:adNetwork', '', 'http://news.yandex.ru');
             $adChild->addAttribute('type', $this->adType);
@@ -121,7 +127,7 @@ class Channel implements ChannelInterface
                 $adChild->addAttribute('turbo-ad-id', $this->adTurboAdId);
             }
 
-            if (($this->adType == self::AD_TYPE_ADFOX) && $this->adCode) {
+            if ($this->adType == self::AD_TYPE_ADFOX) {
                 $dom = dom_import_simplexml($adChild);
                 $elementOwner = $dom->ownerDocument;
                 $dom->appendChild($elementOwner->createCDATASection($this->adCode));

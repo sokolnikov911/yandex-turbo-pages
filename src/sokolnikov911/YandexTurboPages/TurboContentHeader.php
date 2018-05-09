@@ -7,6 +7,7 @@ use DOMDocument;
 /**
  * Class TurboContentHeader
  * @package sokolnikov911\YandexTurboPages
+ * @deprecated 2.0.0 Use Content::header instead
  */
 class TurboContentHeader implements TurboContentHeaderInterface
 {
