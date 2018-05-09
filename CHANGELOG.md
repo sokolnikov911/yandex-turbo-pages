@@ -8,6 +8,7 @@ Yandex Turbo Pages Change Log
 * Enh: added Content helper with next methods: header, img, gallery, share, button;
 * Dep: TurboContentHeader marked as deprecated. Should used Content::header instead;
 * Ref: refactored Channel adNetwork() and asXML() methods for best cyclomatic complexity value;
+* Enf: added possibility to add yandex:full-text for compatibility with Yandex News;
 
 1.0.4 December 22, 2017
 --------------------

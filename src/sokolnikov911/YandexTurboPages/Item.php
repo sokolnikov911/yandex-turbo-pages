@@ -27,6 +27,9 @@ class Item implements ItemInterface
     protected $author;
 
     /** @var string */
+    protected $fullText;
+
+    /** @var string */
     protected $turboSource;
 
     /** @var string */
@@ -92,6 +95,12 @@ class Item implements ItemInterface
         return $this;
     }
 
+    public function fullText(string $fullText): ItemInterface
+    {
+        $this->fullText = $fullText;
+        return $this;
+    }
+
     public function appendTo(ChannelInterface $channel): ItemInterface
     {
         $channel->addItem($this);
@@ -122,6 +131,10 @@ class Item implements ItemInterface
 
         if (!empty($this->author)) {
             $xml->addChild('author', $this->author);
+        }
+
+        if (!empty($this->fullText)) {
+            $xml->addChild('yandex:full-text', $this->fullText, 'http://news.yandex.ru');
         }
 
         if (!empty($this->turboTopic)) {

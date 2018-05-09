@@ -71,6 +71,13 @@ interface ItemInterface
     public function author(string $author): ItemInterface;
 
     /**
+     * Set the yandex:full-text
+     * @param string $fullText yandex:full-text
+     * @return ItemInterface
+     */
+    public function fullText(string $fullText): ItemInterface;
+
+    /**
      * Append item to the channel
      * @param ChannelInterface $channel
      * @return ItemInterface

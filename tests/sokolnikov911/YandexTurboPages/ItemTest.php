@@ -77,6 +77,14 @@ class ItemTest extends TestCase
         $this->assertAttributeSame($author, 'author', $item);
     }
 
+    public function testFullText()
+    {
+        $fullText = uniqid();
+        $item = new Item();
+        $this->assertSame($item, $item->fullText($fullText));
+        $this->assertAttributeSame($fullText, 'fullText', $item);
+    }
+
     public function testPubDate()
     {
         $pubDate = mt_rand(1000000, 9999999);
@@ -176,6 +184,35 @@ class ItemTest extends TestCase
         $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
     }
 
+    public function testAsXMLWithFullText()
+    {
+        $data = $this->dataForXmlTests();
+
+        $item = new Item();
+        $item
+            ->author($data['author'])
+            ->pubDate($data['now'])
+            ->title($data['title'])
+            ->link($data['link'])
+            ->turboContent($data['turboContent'])
+            ->category($data['category'])
+            ->fullText($data['fullText']);
+
+        $expect = '
+        <item turbo="true">
+            <title>' . $data['title'] . '</title>
+            <link>' . $data['link'] . '</link>
+            <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>
+            <pubDate>' . $data['pubDate'] . '</pubDate>
+            <category>' . $data['category'] . '</category>            
+            <author>' . $data['author'] . '</author>                        
+            <yandex:full-text xmlns:yandex="http://news.yandex.ru">' . $data['fullText'] . '</yandex:full-text>
+        </item>
+        ';
+
+        $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
+    }
+
     public function testAsXMLWithDisabledTurbo()
     {
         $data = $this->dataForXmlTests();
@@ -246,6 +283,7 @@ class ItemTest extends TestCase
             'turboContent' => 'Some content here!<br>Second content string.',
             'author'       => 'John Smith',
             'category'     => 'Auto',
+            'fullText'     => 'Some full text here!',
         ];
 
         return $data;
