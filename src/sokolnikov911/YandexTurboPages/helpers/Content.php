@@ -120,7 +120,7 @@ class Content
     /**
      * Generate comment block
      * @param string $url URL to comments page
-     * @param array $comments multidimensional or one-dimensional array of comments,
+     * @param array $commentsArray multidimensional or one-dimensional array of comments,
      * can has unlimited includes, example:
      * [
      *  [
