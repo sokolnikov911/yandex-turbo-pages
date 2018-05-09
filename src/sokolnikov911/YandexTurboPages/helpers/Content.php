@@ -65,7 +65,7 @@ class Content
             $galleryString .= '<img src="' . $image . '" />';
         }
 
-        return $galleryString = '<div data-block="gallery">' . $galleryString . '</div>';
+        return '<div data-block="gallery">' . $galleryString . '</div>';
     }
 
     /**
@@ -95,7 +95,7 @@ class Content
      * @param bool $isDisabled
      * @return string
      */
-    public static function button(string $text, string $url = null, string $phone = null,
+    public static function button(string $text, string $url = '', string $phone = '',
                                   string $buttonColor = null, string $textColor = null,
                                   bool $isBoldText = false, bool $isDisabled = false): string
     {

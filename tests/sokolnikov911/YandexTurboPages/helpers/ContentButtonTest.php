@@ -16,7 +16,7 @@ class ContentButtonTest extends TestCase
 
     public function testFullUrlButton()
     {
-        $button = Content::button($this->text, $this->url, null, $this->buttonColor, $this->textColor,
+        $button = Content::button($this->text, $this->url, '', $this->buttonColor, $this->textColor,
             $this->isBoldText, $this->isDisabled);
         $fullButton = "<button
                     formaction=\"" . $this->url . "\"
@@ -29,7 +29,7 @@ class ContentButtonTest extends TestCase
 
     public function testFullPhoneButton()
     {
-        $button = Content::button($this->text, null, $this->phone, $this->buttonColor, $this->textColor,
+        $button = Content::button($this->text, '', $this->phone, $this->buttonColor, $this->textColor,
             $this->isBoldText, $this->isDisabled);
         $fullButton = "<button
                     formaction=\"tel:" . $this->phone . "\"
