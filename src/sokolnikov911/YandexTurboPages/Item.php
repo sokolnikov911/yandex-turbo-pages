@@ -125,17 +125,11 @@ class Item implements ItemInterface
         $xml->addCdataChild('turbo:content', $this->turboContent, 'http://turbo.yandex.ru');
         $xml->addChild('pubDate', date(DATE_RSS, $this->pubDate));
 
-        if ($this->category) $xml->addChild('category', $this->category);
-        if ($this->author) $xml->addChild('author', $this->author);
-
-        if ($this->fullText)
-            $xml->addChild('yandex:full-text', $this->fullText, 'http://news.yandex.ru');
-        
-        if ($this->turboTopic)
-            $xml->addChild('turbo:topic', $this->turboTopic, 'http://turbo.yandex.ru');
-
-        if ($this->turboSource)
-            $xml->addChild('turbo:source', $this->turboSource, 'http://turbo.yandex.ru');
+        $xml->addChildWithValueChecking('category', $this->category);
+        $xml->addChildWithValueChecking('author', $this->author);
+        $xml->addChildWithValueChecking('yandex:full-text', $this->fullText, 'http://news.yandex.ru');
+        $xml->addChildWithValueChecking('turbo:topic', $this->turboTopic, 'http://turbo.yandex.ru');
+        $xml->addChildWithValueChecking('turbo:source', $this->turboSource, 'http://turbo.yandex.ru');
 
         if ($this->relatedItemsList) {
             $toDom = dom_import_simplexml($xml);

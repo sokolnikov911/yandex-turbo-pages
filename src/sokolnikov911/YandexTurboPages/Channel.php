@@ -110,9 +110,7 @@ class Channel implements ChannelInterface
         $xml->addChild('link', $this->link);
         $xml->addChild('description', $this->description);
 
-        if ($this->language !== null) {
-            $xml->addChild('language', $this->language);
-        }
+        $xml->addChildWithValueChecking('language', $this->language);
 
         if ($this->adType) {
 
