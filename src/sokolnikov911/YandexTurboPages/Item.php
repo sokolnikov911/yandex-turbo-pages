@@ -123,8 +123,8 @@ class Item implements ItemInterface
         $xml->addChild('title', $this->title);
         $xml->addChild('link', $this->link);
         $xml->addCdataChild('turbo:content', $this->turboContent, 'http://turbo.yandex.ru');
-        $xml->addChild('pubDate', date(DATE_RSS, $this->pubDate));
 
+        $xml->addChildWithValueChecking('pubDate', date(DATE_RSS, $this->pubDate));
         $xml->addChildWithValueChecking('category', $this->category);
         $xml->addChildWithValueChecking('author', $this->author);
         $xml->addChildWithValueChecking('yandex:full-text', $this->fullText, 'http://news.yandex.ru');
