@@ -11,12 +11,12 @@ class RelatedItemsList implements RelatedItemsListInterface
     /** @var RelatedItemInterface[] */
     protected $relatedItems = [];
 
+    /** @var bool */
     protected $infinity;
 
     /**
      * Add channel
      * @param bool $infinity Use or not infinity scroll of related items
-     * @return void
      */
     public function __construct(bool $infinity = false)
     {
