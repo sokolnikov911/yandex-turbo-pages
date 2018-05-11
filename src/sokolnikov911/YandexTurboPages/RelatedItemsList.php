@@ -11,6 +11,18 @@ class RelatedItemsList implements RelatedItemsListInterface
     /** @var RelatedItemInterface[] */
     protected $relatedItems = [];
 
+    protected $infinity;
+
+    /**
+     * Add channel
+     * @param bool $infinity Use or not infinity scroll of related items
+     * @return void
+     */
+    public function __construct(bool $infinity = false)
+    {
+        $this->infinity = $infinity;
+    }
+
     public function appendTo(ItemInterface $item): RelatedItemsListInterface
     {
         $item->addRelatedItemsList($this);
@@ -25,7 +37,11 @@ class RelatedItemsList implements RelatedItemsListInterface
 
     public function asXML(): SimpleXMLElement
     {
-        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><yandex:related></yandex:related>', LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);
+        $infinity = $this->infinity ? 'type="infinity"' : '';
+
+        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><yandex:related '
+            . $infinity . '></yandex:related>',
+            LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);
 
         foreach ($this->relatedItems as $item) {
             $toDom = dom_import_simplexml($xml);

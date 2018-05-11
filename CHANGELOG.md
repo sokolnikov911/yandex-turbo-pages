@@ -1,6 +1,11 @@
 Yandex Turbo Pages Change Log
 =============================
 
+Dev-master
+--------------------
+* Enh: added possibility to enable infinity mode for related items
+* Fix: pubDate for items is not required for now
+
 1.1.0 May 9, 2018
 --------------------
 * Enh: added possibility to add custom counter;
