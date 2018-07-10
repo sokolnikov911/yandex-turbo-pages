@@ -82,6 +82,27 @@ $item
 echo $feed;
 ```
 
+For generating content for turbo items you can use `Content` helper. For example:
+
+```
+// generate header
+$menuArray = [
+    ['url' => 'http://example/page1.html', 'title' => 'Page title 1'],
+    ['url' => 'http://example/page2.html', 'title' => 'Page title 2']
+];
+$header = Content::header('Main title', 'Second title',
+    'http://example.com/image1.jpg', 'Image description', $menuArray);
+```
+
+At this time you can use helpers for generate next elements:
+* page header including menu;
+* image;
+* images gallery;
+* share buttons;
+* link or phone button;
+* comments.
+
+Examples of using helpers you can find in `examples/content_helpers.php`.
 
 
 ## Installing
