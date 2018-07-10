@@ -1,8 +1,9 @@
 Yandex Turbo Pages Change Log
 =============================
 
-Dev-master
+1.1.1 July 10, 2018
 --------------------
+* Doc: add documentation and examples for using Content helper
 * Enh: added possibility to enable infinity mode for related items
 * Fix: pubDate for items is not required for now
 
