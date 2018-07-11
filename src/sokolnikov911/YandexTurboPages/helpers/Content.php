@@ -86,11 +86,11 @@ class Content
 
     /**
      * Generate rating block
-     * @param integer $currentRating
-     * @param integer $maxRating
+     * @param float $currentRating
+     * @param float $maxRating
      * @return string
      */
-    public static function rating(int $currentRating, int $maxRating): string
+    public static function rating(float $currentRating, float $maxRating): string
     {
         if (($currentRating > $maxRating) || ($maxRating <= 0) || ($currentRating < 0)) {
             throw new \UnexpectedValueException("Current rating can't be bigger than max value. And max value must be bigger than 0.");

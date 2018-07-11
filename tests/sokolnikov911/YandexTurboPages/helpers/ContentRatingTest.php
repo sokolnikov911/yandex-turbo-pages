@@ -8,9 +8,9 @@ class ContentRatingTest extends TestCase
 {
     public function testRating()
     {
-        $rating = Content::rating(3, 5);
+        $rating = Content::rating(3.5, 5);
         $code = "<div itemscope=\"\" itemtype=\"http://schema.org/Rating\">
-                       <meta itemprop=\"ratingValue\" content=\"3\" />
+                       <meta itemprop=\"ratingValue\" content=\"3.5\" />
                        <meta itemprop=\"bestRating\" content=\"5\" />
                    </div>";
         $this->assertXmlStringEqualsXmlString($rating, $code);
