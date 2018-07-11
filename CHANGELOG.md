@@ -1,6 +1,10 @@
 Yandex Turbo Pages Change Log
 =============================
 
+Dev-master
+--------------------
+* Enh: added rating method into Content helper
+
 1.1.1 July 10, 2018
 --------------------
 * Doc: add documentation and examples for using Content helper

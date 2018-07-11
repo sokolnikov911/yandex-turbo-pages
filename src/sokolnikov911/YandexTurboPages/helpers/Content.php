@@ -85,6 +85,24 @@ class Content
     }
 
     /**
+     * Generate rating block
+     * @param integer $currentRating
+     * @param integer $maxRating
+     * @return string
+     */
+    public static function rating(int $currentRating, int $maxRating): string
+    {
+        if (($currentRating > $maxRating) || ($maxRating <= 0)) {
+            throw new \UnexpectedValueException("Current rating can't be bigger than max value. And max value must be bigger than 0.");
+        }
+
+        return '<div itemscope="" itemtype="http://schema.org/Rating">
+                       <meta itemprop="ratingValue" content="' . $currentRating . '" />
+                       <meta itemprop="bestRating" content="' . $maxRating . '" />
+                </div>';
+    }
+
+    /**
      * Generate button
      * @param string $text
      * @param string $url

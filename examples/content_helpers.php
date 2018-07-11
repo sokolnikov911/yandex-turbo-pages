@@ -91,3 +91,8 @@ $simpleGallery = Content::gallery($imagesArray);
 
 // generate image gallery with title
 $galleryWithTitle = Content::gallery($imagesArray, 'Gallery title');
+
+
+
+// generate rating block
+$rating = Content::rating(3, 5);

@@ -100,7 +100,8 @@ At this time you can use helpers for generate next elements:
 * images gallery;
 * share buttons;
 * link or phone button;
-* comments.
+* comments;
+* rating.
 
 Examples of using helpers you can find in `examples/content_helpers.php`.
 
