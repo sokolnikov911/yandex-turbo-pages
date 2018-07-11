@@ -92,7 +92,7 @@ class Content
      */
     public static function rating(int $currentRating, int $maxRating): string
     {
-        if (($currentRating > $maxRating) || ($maxRating <= 0)) {
+        if (($currentRating > $maxRating) || ($maxRating <= 0) || ($currentRating <= 0)) {
             throw new \UnexpectedValueException("Current rating can't be bigger than max value. And max value must be bigger than 0.");
         }
 
