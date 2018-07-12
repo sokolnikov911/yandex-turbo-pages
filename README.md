@@ -84,7 +84,7 @@ echo $feed;
 
 For generating content for turbo items you can use `Content` helper. For example:
 
-```
+```php
 // generate header
 $menuArray = [
     ['url' => 'http://example/page1.html', 'title' => 'Page title 1'],
