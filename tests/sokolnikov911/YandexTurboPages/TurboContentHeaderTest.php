@@ -5,7 +5,7 @@ namespace sokolnikov911\YandexTurboPages;
 use PHPUnit\Framework\TestCase;
 use DOMDocument;
 
-class TruboContentHeaderTest extends TestCase
+class TurboContentHeaderTest extends TestCase
 {
     public function testTitleH1()
     {

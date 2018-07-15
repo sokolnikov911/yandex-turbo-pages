@@ -181,6 +181,29 @@ class Content
         return '<div data-block="comments" data-url="' . $url . '">' . $commentBlock . '</div>';
     }
 
+    /**
+     * Generate accordion
+     * @param array $accordionArray array accordion elements
+     * [
+     *     ['title' => 'Page title 1', 'text' => 'Text 1'],
+     *     ['title' => 'Page title 2', 'text' => 'Text 2', 'expanded' => true],
+     * ]
+     * @return string
+     */
+    public static function accordion(array $accordionArray): string
+    {
+        $accordionString = '<div data-block="accordion">';
+
+        foreach ($accordionArray as $item) {
+            $expanded = isset($item['expanded']) && $item['expanded'] ? ' data-expanded="true"' : '';
+            $accordionString .= '<div data-block="item" data-title="' . $item['title'] . '"' . $expanded . '>' . $item['text'] . '</div>';
+        }
+
+        $accordionString .= '</div>';
+
+        return $accordionString;
+    }
+
     private static function generateCommentBlock(array $commentsArray)
     {
         $commentBlock = '';
