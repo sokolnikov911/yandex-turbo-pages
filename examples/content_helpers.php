@@ -96,3 +96,12 @@ $galleryWithTitle = Content::gallery($imagesArray, 'Gallery title');
 
 // generate rating block
 $rating = Content::rating(3, 5);
+
+
+
+// generate accordion block
+$accordionArray = [
+    ['title' => 'Page title 1', 'text' => 'Text 1'],
+    ['title' => 'Page title 2', 'text' => 'Text 2', 'expanded' => true]
+];
+$accordion = Content::accordion($accordionArray);
