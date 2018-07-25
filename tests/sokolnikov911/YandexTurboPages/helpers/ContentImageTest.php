@@ -4,29 +4,23 @@ namespace sokolnikov911\YandexTurboPages\helpers;
 
 use PHPUnit\Framework\TestCase;
 
-class ContentGalleryTest extends TestCase
+class ContentImageTest extends TestCase
 {
-    private $header = 'Some gallery description';
-    private $images = ['http://example/img1.jpg', 'http://example/img2.jpg'];
+    private $imgUrl = 'http://example.com/img.jpg';
+    private $imgCaption = 'Image Caption';
 
-    public function testBaseImage()
+    public function testBaseGallery()
     {
-        $gallery = Content::gallery($this->images);
-        $baseGallery = "<div data-block=\"gallery\">
-                <img src=\"http://example/img1.jpg\" />
-                <img src=\"http://example/img2.jpg\" />
-            </div>";
-        $this->assertXmlStringEqualsXmlString($baseGallery, $gallery);
+        $image = Content::img($this->imgUrl);
+        $baseImage = '<figure><img src="' . $this->imgUrl . '" /></figure>';
+        $this->assertXmlStringEqualsXmlString($baseImage, $image);
     }
 
     public function testGalleryWithHeader()
     {
-        $gallery = Content::gallery($this->images, $this->header);
-        $fullGallery = "<div data-block=\"gallery\">
-                <header>" . $this->header . "</header>
-                <img src=\"http://example/img1.jpg\" />
-                <img src=\"http://example/img2.jpg\" />
-            </div>";
-        $this->assertXmlStringEqualsXmlString($fullGallery, $gallery);
+        $image = Content::img($this->imgUrl, $this->imgCaption);
+        $fullImage = '<figure><img src="' . $this->imgUrl . '" /><figcaption>' . $this->imgCaption
+            . '</figcaption></figure>';
+        $this->assertXmlStringEqualsXmlString($fullImage, $image);
     }
 }

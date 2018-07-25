@@ -11,6 +11,8 @@ class Content
     const SHARE_TYPE_TWITTER   = 'twitter';
     const SHARE_TYPE_VKONTAKTE = 'vkontakte';
 
+    const OWN_VIDEO_TYPE_MP4 = 'video/mp4';
+
     /**
      * Generate header element
      * @param string $h1
@@ -48,6 +50,23 @@ class Content
         $imageString .= $imgCaption ? '<figcaption>' . $imgCaption . '</figcaption>' : '';
 
         return '<figure>' . $imageString . '</figure>';
+    }
+
+    /**
+     * Generate video element
+     * @param string $videoUrl
+     * @param string|null $videoCaption
+     * @param string $imgUrl
+     * @param string $type
+     * @return string
+     */
+    public static function ownVideo(string $videoUrl, string $videoCaption = null, string $type = self::OWN_VIDEO_TYPE_MP4, string $imgUrl = null): string
+    {
+        $videoString = '<video><source src="' . $videoUrl . '" type="' . $type . '" /></video>';
+        $videoString .= $imgUrl ? '<img src="' . $imgUrl . '" />' : '';
+        $videoString .= $videoCaption ? '<figcaption>' . $videoCaption . '</figcaption>' : '';
+
+        return '<figure>' . $videoString . '</figure>';
     }
 
     /**

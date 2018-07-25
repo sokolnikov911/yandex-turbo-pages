@@ -105,3 +105,11 @@ $accordionArray = [
     ['title' => 'Page title 2', 'text' => 'Text 2', 'expanded' => true]
 ];
 $accordion = Content::accordion($accordionArray);
+
+
+
+// generate block with video from own server
+$videoUrl = 'http://example.com/video.mp4';
+$imgUrl = 'http://example.com/img.jpg';
+$videoCaption = 'Video Caption';
+$ownVideo = Content::ownVideo($videoUrl, $videoCaption, Content::OWN_VIDEO_TYPE_MP4, $imgUrl);
