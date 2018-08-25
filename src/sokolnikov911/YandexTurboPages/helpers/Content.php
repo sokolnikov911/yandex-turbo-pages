@@ -2,6 +2,8 @@
 
 namespace sokolnikov911\YandexTurboPages\helpers;
 
+use sokolnikov911\YandexTurboPages\Channel;
+
 class Content
 {
     const SHARE_TYPE_FACEBOOK  = 'facebook';
@@ -221,6 +223,18 @@ class Content
         $accordionString .= '</div>';
 
         return $accordionString;
+    }
+
+    /**
+     * Generate Ad block position element
+     * @param string $turboAdId value of $turboAdId used in Channel() class
+     * @return string
+     *
+     * @see Channel::$adTurboAdId
+     */
+    public static function adBlockPosition(string $turboAdId): string
+    {
+        return '<figure data-turbo-ad-id="' . $turboAdId . '"></figure>';
     }
 
     private static function generateCommentBlock(array $commentsArray)

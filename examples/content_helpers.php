@@ -113,3 +113,8 @@ $videoUrl = 'http://example.com/video.mp4';
 $imgUrl = 'http://example.com/img.jpg';
 $videoCaption = 'Video Caption';
 $ownVideo = Content::ownVideo($videoUrl, $videoCaption, Content::OWN_VIDEO_TYPE_MP4, $imgUrl);
+
+
+
+// generate Ad block position element
+$adBlockPosition = Content::adBlockPosition('first_ad_place');
