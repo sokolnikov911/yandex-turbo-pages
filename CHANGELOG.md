@@ -7,6 +7,7 @@ Dev-master
 * Enh: added rating method into Content helper
 * Enh: added ownVideo method into Content helper
 * Enh: added adBlockPosition method into Content helper
+* Enh: added slider method into Content helper
 
 1.1.1 July 10, 2018
 --------------------

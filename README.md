@@ -104,7 +104,8 @@ At this time you can use helpers for generate next elements:
 * rating;
 * accordion;
 * video from own server;
-* ad block position element.
+* ad block position element;
+* media-content with slider.
 
 Examples of using helpers you can find in `examples/content_helpers.php`.
 

@@ -13,6 +13,13 @@ class Content
     const SHARE_TYPE_TWITTER   = 'twitter';
     const SHARE_TYPE_VKONTAKTE = 'vkontakte';
 
+    const SLIDER_DATA_VIEW_SQUARE    = 'square';
+    const SLIDER_DATA_VIEW_PORTRAIT  = 'portrait';
+    const SLIDER_DATA_VIEW_LANDSCAPE = 'landscape';
+
+    const SLIDER_DATA_ITEM_VIEW_COVER   = 'cover';
+    const SLIDER_DATA_ITEM_VIEW_CONTAIN = 'contain';
+
     const OWN_VIDEO_TYPE_MP4 = 'video/mp4';
 
     /**
@@ -87,6 +94,47 @@ class Content
         }
 
         return '<div data-block="gallery">' . $galleryString . '</div>';
+    }
+
+    /**
+     * Generate media slider
+     * @param array $itemsArray Array of items with data
+     * [
+     *     ['url' => 'http://example.com/image1.jpg', 'title' => 'Image title 1', 'link' => ''],
+     *     ['url' => 'http://example.com/image2.jpg', 'title' => 'Image title 2', 'link' => ''],
+     *     ['url' => 'http://example.com/image3.jpg'],
+     *     ['href' => 'http://example.com/page1.html', 'title' => 'Link title 1', 'text' => 'Link text 1']
+     * ]
+     * @param string|null $header
+     * @param string $dataView
+     * @param string $dataItemView
+     * @return string
+     */
+    public static function slider(array $itemsArray, string $header = null,
+                                  string $dataView = self::SLIDER_DATA_VIEW_SQUARE,
+                                  string $dataItemView = self::SLIDER_DATA_ITEM_VIEW_COVER): string
+    {
+        $sliderString = $header ? '<header>' . $header . '</header>' : '';
+
+        foreach ($itemsArray as $item) {
+            if (isset($item['url']) || (isset($item['href']) && isset($item['text']))) {
+                $sliderString .= '<figure>';
+                $sliderString .= isset($item['title'])
+                    ? '<figcaption>' . $item['title'] . '</figcaption>'
+                    : '';
+
+                if (isset($item['url'])) {
+                    $sliderString .= '<img src="' . $item['url'] . '" />';
+                } elseif (isset($item['href']) && isset($item['text'])) {
+                    $sliderString .= '<a href="' . $item['href'] . '">' . $item['text'] . '</a>';
+                }
+
+                $sliderString .= '</figure>';
+            }
+        }
+
+        return '<div data-block="slider" data-view="' . $dataView . '" data-item-view="'
+            . $dataItemView . '">' . $sliderString . '</div>';
     }
 
     /**

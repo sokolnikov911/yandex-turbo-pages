@@ -118,3 +118,14 @@ $ownVideo = Content::ownVideo($videoUrl, $videoCaption, Content::OWN_VIDEO_TYPE_
 
 // generate Ad block position element
 $adBlockPosition = Content::adBlockPosition('first_ad_place');
+
+
+
+// generate slider block
+$items = [
+    ['url' => 'http://example.com/image1.jpg', 'title' => 'Image title 1', 'link' => ''],
+    ['url' => 'http://example.com/image2.jpg', 'title' => 'Image title 2', 'link' => ''],
+    ['url' => 'http://example.com/image3.jpg'],
+    ['href' => 'http://example.com/page1.html', 'title' => 'Link title 1', 'text' => 'Link text 1']
+];
+$slider = Content::slider($items);
