@@ -118,9 +118,10 @@ class Content
 
         foreach ($itemsArray as $item) {
             $sliderString .= '<figure>';
-            $sliderString .= isset($item['title'])
-                ? '<figcaption>' . $item['title'] . '</figcaption>'
-                : '';
+            
+            if (isset($item['title'])) {
+                $sliderString .= '<figcaption>' . $item['title'] . '</figcaption>';
+            }
 
             if (isset($item['url'])) {
                 $sliderString .= '<img src="' . $item['url'] . '" />';
