@@ -6,18 +6,18 @@ use sokolnikov911\YandexTurboPages\Channel;
 
 class Content
 {
-    const SHARE_TYPE_FACEBOOK  = 'facebook';
-    const SHARE_TYPE_GOOGLE    = 'google';
+    const SHARE_TYPE_FACEBOOK = 'facebook';
+    const SHARE_TYPE_GOOGLE = 'google';
     const SHARE_TYPE_ODNOKLASSNIKI = 'odnoklassniki';
-    const SHARE_TYPE_TELEGRAM  = 'telegram';
-    const SHARE_TYPE_TWITTER   = 'twitter';
+    const SHARE_TYPE_TELEGRAM = 'telegram';
+    const SHARE_TYPE_TWITTER = 'twitter';
     const SHARE_TYPE_VKONTAKTE = 'vkontakte';
 
-    const SLIDER_DATA_VIEW_SQUARE    = 'square';
-    const SLIDER_DATA_VIEW_PORTRAIT  = 'portrait';
+    const SLIDER_DATA_VIEW_SQUARE = 'square';
+    const SLIDER_DATA_VIEW_PORTRAIT = 'portrait';
     const SLIDER_DATA_VIEW_LANDSCAPE = 'landscape';
 
-    const SLIDER_DATA_ITEM_VIEW_COVER   = 'cover';
+    const SLIDER_DATA_ITEM_VIEW_COVER = 'cover';
     const SLIDER_DATA_ITEM_VIEW_CONTAIN = 'contain';
 
     const OWN_VIDEO_TYPE_MP4 = 'video/mp4';
@@ -36,7 +36,7 @@ class Content
      * @return string
      */
     public static function header(string $h1, string $h2 = null, string $imgUrl = null,
-        string $imgCaption = null, array $menuArray = null): string
+                                  string $imgCaption = null, array $menuArray = null): string
     {
         $header = '<h1>' . $h1 . '</h1>';
         $header .= $h2 ? '<h2>' . $h2 . '</h2>' : '';
@@ -117,20 +117,18 @@ class Content
         $sliderString = $header ? '<header>' . $header . '</header>' : '';
 
         foreach ($itemsArray as $item) {
-            if (isset($item['url']) || (isset($item['href']) && isset($item['text']))) {
-                $sliderString .= '<figure>';
-                $sliderString .= isset($item['title'])
-                    ? '<figcaption>' . $item['title'] . '</figcaption>'
-                    : '';
+            $sliderString .= '<figure>';
+            $sliderString .= isset($item['title'])
+                ? '<figcaption>' . $item['title'] . '</figcaption>'
+                : '';
 
-                if (isset($item['url'])) {
-                    $sliderString .= '<img src="' . $item['url'] . '" />';
-                } elseif (isset($item['href']) && isset($item['text'])) {
-                    $sliderString .= '<a href="' . $item['href'] . '">' . $item['text'] . '</a>';
-                }
-
-                $sliderString .= '</figure>';
+            if (isset($item['url'])) {
+                $sliderString .= '<img src="' . $item['url'] . '" />';
+            } elseif (isset($item['href']) && isset($item['text'])) {
+                $sliderString .= '<a href="' . $item['href'] . '">' . $item['text'] . '</a>';
             }
+
+            $sliderString .= '</figure>';
         }
 
         return '<div data-block="slider" data-view="' . $dataView . '" data-item-view="'
@@ -192,9 +190,9 @@ class Content
 
         $formAction = $url ? $url : 'tel:' . $phone;
         $buttonColorString = $buttonColor ? 'data-background-color="' . $buttonColor . '"' : '';
-        $textColorString   = $textColor   ? 'data-color="' . $textColor . '"' : '';
-        $isBoldTextString  = $isBoldText  ? 'data-primary="true"' : '';
-        $isDisabledString  = $isDisabled  ? 'disabled="true"' : '';
+        $textColorString = $textColor ? 'data-color="' . $textColor . '"' : '';
+        $isBoldTextString = $isBoldText ? 'data-primary="true"' : '';
+        $isDisabledString = $isDisabled ? 'disabled="true"' : '';
 
         return "<button
                     formaction=\"" . $formAction . "\"
