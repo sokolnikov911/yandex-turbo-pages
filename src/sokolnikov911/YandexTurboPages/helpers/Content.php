@@ -283,7 +283,7 @@ class Content
 
             if (isset($item['url'])) {
                 $sliderString .= '<img src="' . $item['url'] . '" />';
-            } elseif (isset($item['href']) && isset($item['text'])) {
+            } elseif (isset($item['href'])) {
                 $sliderString .= '<a href="' . $item['href'] . '">' . $item['text'] . '</a>';
             }
 
