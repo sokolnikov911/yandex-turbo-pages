@@ -270,7 +270,18 @@ class Content
         return '<figure data-turbo-ad-id="' . $turboAdId . '"></figure>';
     }
 
-    private static function generateSliderItemsBlock(array $itemsArray)
+    /**
+     * Generate content block for media slider
+     * @param array $itemsArray Array of items with data
+     * [
+     *     ['url' => 'http://example.com/image1.jpg', 'title' => 'Image title 1', 'link' => ''],
+     *     ['url' => 'http://example.com/image2.jpg', 'title' => 'Image title 2', 'link' => ''],
+     *     ['url' => 'http://example.com/image3.jpg'],
+     *     ['href' => 'http://example.com/page1.html', 'title' => 'Link title 1', 'text' => 'Link text 1']
+     * ]
+     * @return string
+     */
+    private static function generateSliderItemsBlock(array $itemsArray): string
     {
         $sliderString = '';
 
@@ -293,7 +304,7 @@ class Content
         return $sliderString;
     }
 
-    private static function generateCommentBlock(array $commentsArray)
+    private static function generateCommentBlock(array $commentsArray): string
     {
         $commentBlock = '';
 
