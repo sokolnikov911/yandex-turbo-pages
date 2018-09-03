@@ -116,21 +116,7 @@ class Content
     {
         $sliderString = $header ? '<header>' . $header . '</header>' : '';
 
-        foreach ($itemsArray as $item) {
-            $sliderString .= '<figure>';
-            
-            if (isset($item['title'])) {
-                $sliderString .= '<figcaption>' . $item['title'] . '</figcaption>';
-            }
-
-            if (isset($item['url'])) {
-                $sliderString .= '<img src="' . $item['url'] . '" />';
-            } elseif (isset($item['href']) && isset($item['text'])) {
-                $sliderString .= '<a href="' . $item['href'] . '">' . $item['text'] . '</a>';
-            }
-
-            $sliderString .= '</figure>';
-        }
+        $sliderString .= self::generateSliderItemsBlock($itemsArray);
 
         return '<div data-block="slider" data-view="' . $dataView . '" data-item-view="'
             . $dataItemView . '">' . $sliderString . '</div>';
@@ -282,6 +268,29 @@ class Content
     public static function adBlockPosition(string $turboAdId): string
     {
         return '<figure data-turbo-ad-id="' . $turboAdId . '"></figure>';
+    }
+
+    private static function generateSliderItemsBlock(array $itemsArray)
+    {
+        $sliderString = '';
+
+        foreach ($itemsArray as $item) {
+            $sliderString .= '<figure>';
+
+            if (isset($item['title'])) {
+                $sliderString .= '<figcaption>' . $item['title'] . '</figcaption>';
+            }
+
+            if (isset($item['url'])) {
+                $sliderString .= '<img src="' . $item['url'] . '" />';
+            } elseif (isset($item['href']) && isset($item['text'])) {
+                $sliderString .= '<a href="' . $item['href'] . '">' . $item['text'] . '</a>';
+            }
+
+            $sliderString .= '</figure>';
+        }
+
+        return $sliderString;
     }
 
     private static function generateCommentBlock(array $commentsArray)
