@@ -6,6 +6,7 @@ Dev-master
 * Enh: added accordion method into Content helper
 * Enh: added rating method into Content helper
 * Enh: added ownVideo method into Content helper
+* Enh: added externalVideo method into Content helper
 * Enh: added adBlockPosition method into Content helper
 * Enh: added slider method into Content helper
 

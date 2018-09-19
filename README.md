@@ -104,6 +104,7 @@ At this time you can use helpers for generate next elements:
 * rating;
 * accordion;
 * video from own server;
+* video from external server;
 * ad block position element;
 * media-content with slider.
 

@@ -79,6 +79,35 @@ class Content
     }
 
     /**
+     * Generate video element for external video
+     * @param string $videoUrl
+     * @param array $options Options Array with next variables: width, height, frameborder, allowfullscreen,
+     * referrerpolicy, sandbox, hd. Options example:
+     * [
+     *  'width' => 640,
+     *  'height' => 480,
+     *  'frameborder' => 1,
+     *  'allowfullscreen' => 'true',
+     *  'referrerpolicy' => 'unsafe-url',
+     *  'sandbox' => 'allow-forms allow-modals',
+     *  'hd' => 3
+     * ]
+     * @return string
+     */
+    public static function externalVideo(string $videoUrl, array $options = []): string
+    {
+        $videoString = '<iframe src="' . $videoUrl . '"';
+
+        foreach ($options as $key => $value) {
+            $videoString .= ' ' . $key . '="' . $value . '"';
+        }
+
+        $videoString .= '></iframe>';
+
+        return $videoString;
+    }
+
+    /**
      * Generate images gallery
      * @param array $imagesArray Array of images urls
      * ['http://example.com/image1.jpg', 'http://example.com/image2.jpg']

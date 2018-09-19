@@ -116,6 +116,21 @@ $ownVideo = Content::ownVideo($videoUrl, $videoCaption, Content::OWN_VIDEO_TYPE_
 
 
 
+// generate block with video from own server
+$videoUrl = 'http://example.com/video.mp4';
+$options = [
+    'width' => 640,
+    'height' => 480,
+    'frameborder' => 1,
+    'allowfullscreen' => 'true',
+    'referrerpolicy' => 'unsafe-url',
+    'sandbox' => 'allow-forms allow-modals',
+    'hd' => 3
+];
+$externalVideo = Content::externalVideo($videoUrl, $options);
+
+
+
 // generate Ad block position element
 $adBlockPosition = Content::adBlockPosition('first_ad_place');
 
