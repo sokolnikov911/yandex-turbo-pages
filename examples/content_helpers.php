@@ -144,3 +144,22 @@ $items = [
     ['href' => 'http://example.com/page1.html', 'title' => 'Link title 1', 'text' => 'Link text 1']
 ];
 $slider = Content::slider($items);
+
+
+
+// generate additional content block
+$items = [
+    [
+        'href' => 'http://example.com/page1.html',
+        'title' => 'Item title 1',
+        'description' => 'Item description',
+        'thumb' => 'http://example/image1.jpg',
+        'thumb_position' => Content::ADDITIONAL_CONTENT_THUMB_POSITION_LEFT,
+        'thumb_ratio' => Content::ADDITIONAL_CONTENT_THUMB_RATIO_1_1
+    ],
+    [
+        'href' => 'http://example.com/page2.html',
+        'title' => 'Item title 2',
+    ],
+];
+$additionalContent = Content::additionalContent($items, 'Title', Content::ADDITIONAL_CONTENT_ORIENTATION_HORIZONTAL);

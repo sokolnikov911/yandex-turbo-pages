@@ -22,6 +22,21 @@ class Content
 
     const OWN_VIDEO_TYPE_MP4 = 'video/mp4';
 
+    const ADDITIONAL_CONTENT_ORIENTATION_VERTICAL = 'vertical';
+    const ADDITIONAL_CONTENT_ORIENTATION_HORIZONTAL = 'horizontal';
+
+    const ADDITIONAL_CONTENT_THUMB_POSITION_LEFT = 'left';
+    const ADDITIONAL_CONTENT_THUMB_POSITION_RIGHT = 'right';
+    const ADDITIONAL_CONTENT_THUMB_POSITION_TOP = 'top';
+
+    const ADDITIONAL_CONTENT_THUMB_RATIO_1_1 = '1x1';
+    const ADDITIONAL_CONTENT_THUMB_RATIO_2_3 = '2x3';
+    const ADDITIONAL_CONTENT_THUMB_RATIO_3_2 = '3x2';
+    const ADDITIONAL_CONTENT_THUMB_RATIO_3_4 = '3x4';
+    const ADDITIONAL_CONTENT_THUMB_RATIO_4_3 = '4x3';
+    const ADDITIONAL_CONTENT_THUMB_RATIO_16_9 = '16x9';
+    const ADDITIONAL_CONTENT_THUMB_RATIO_16_10 = '16x10';
+
     /**
      * Generate header element
      * @param string $h1
@@ -300,6 +315,32 @@ class Content
     }
 
     /**
+     * Generate block with additional content
+     * @param array $itemsArray Array of items with data
+     * [
+     *     ['url' => 'http://example.com/image1.jpg', 'title' => 'Image title 1', 'link' => ''],
+     *     ['url' => 'http://example.com/image2.jpg', 'title' => 'Image title 2', 'link' => ''],
+     *     ['url' => 'http://example.com/image3.jpg'],
+     *     ['href' => 'http://example.com/page1.html', 'title' => 'Link title 1', 'text' => 'Link text 1']
+     * ]
+     * @param string|null $title
+     * @param string|null $orientation
+     * @return string
+     * @throws \Exception
+     */
+    public static function additionalContent(array $itemsArray, string $title = null, string $orientation = null): string
+    {
+        $contentString = '<div data-block="feed"';
+
+        $contentString .= $orientation ? ' data-layout="' . $orientation . '"' : '';
+        $contentString .= $title ? ' data-title="' . $title . '"' : '';
+
+        $contentString .= '>';
+
+        return $contentString . self::generateAdditionalContentItemsList($itemsArray) . '</div>';
+    }
+
+    /**
      * Generate content block for media slider
      * @param array $itemsArray Array of items with data
      * [
@@ -368,12 +409,12 @@ class Content
      * Generate header menu
      * @param array $menuArray array of arrays with pairs of url and title
      * [
-     *     ['url' => 'http://example/page1.html', 'title' => 'Page title 1'],
-     *     ['url' => 'http://example/page2.html', 'title' => 'Page title 2'],
+     *     ['url' => 'http://example.com/page1.html', 'title' => 'Page title 1'],
+     *     ['url' => 'http://example.com/page2.html', 'title' => 'Page title 2'],
      * ]
      * @return string
      */
-    private static function generateMenu(array $menuArray)
+    private static function generateMenu(array $menuArray): string
     {
         $menuString = '';
 
@@ -382,5 +423,50 @@ class Content
         }
 
         return '<menu>' . $menuString . '</menu>';
+    }
+
+    /**
+     * Generate additional content items list
+     * @param array $itemsArray array of arrays with data of additional content items
+     * [
+     *     [
+     *          'href' => 'http://example.com/page1.html',
+     *          'title' => 'Item title 1',
+     *          'description' => 'Item description',
+     *          'thumb' => 'http://example/image1.jpg',
+     *          'thumb_position' => Content::ADDITIONAL_CONTENT_THUMB_POSITION_LEFT,
+     *          'thumb_ratio' => Content::ADDITIONAL_CONTENT_THUMB_RATIO_1_1
+     *     ],
+     *     [
+     *          'href' => 'http://example.com/page2.html',
+     *          'title' => 'Item title 2'
+     *     ],
+     * ]
+     * @return string
+     * @throws \Exception
+     */
+    private static function generateAdditionalContentItemsList(array $itemsArray): string
+    {
+        $itemsString = '';
+
+        foreach ($itemsArray as $item) {
+
+            if (!isset($item['href']) || !isset($item['title'])) {
+                throw new \Exception("Title and Url attributes are required");
+            }
+
+            $itemsString .= '<div data-block="feed-item"
+                data-href="' . $item['href'] . '"
+                data-title="' . $item['title'] . '"';
+
+            $itemsString .= isset($item['description']) ? ' data-description="' . $item['description'] . '"' : '';
+            $itemsString .= isset($item['thumb']) ? ' data-thumb="' . $item['thumb'] . '"' : '';
+            $itemsString .= isset($item['thumb_position']) ? ' data-thumb-position="' . $item['thumb_position'] . '"' : '';
+            $itemsString .= isset($item['thumb_ratio']) ? ' data-thumb-ratio="' . $item['thumb_ratio'] . '"' : '';
+
+            $itemsString .= '/>';
+        }
+
+        return $itemsString;
     }
 }
