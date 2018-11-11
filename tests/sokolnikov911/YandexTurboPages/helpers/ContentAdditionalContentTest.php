@@ -58,4 +58,28 @@ class ContentAdditionalContentTest extends TestCase
 
         $this->assertXmlStringEqualsXmlString($baseAdditionalContentBlock, $additionalContent);
     }
+
+    public function testExceptionWithoutHref()
+    {
+        $items = [
+        [
+            'title' => 'Item title 1'
+        ],
+    ];
+
+        $this->expectException(\Exception::class);
+        Content::additionalContent($items);
+    }
+
+    public function testExceptionWithoutTitle()
+    {
+        $items = [
+            [
+                'href' => 'http://example.com/page1.html'
+            ],
+        ];
+
+        $this->expectException(\Exception::class);
+        Content::additionalContent($items);
+    }
 }
