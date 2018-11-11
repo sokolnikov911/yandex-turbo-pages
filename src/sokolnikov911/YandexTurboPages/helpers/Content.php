@@ -318,10 +318,18 @@ class Content
      * Generate block with additional content
      * @param array $itemsArray Array of items with data
      * [
-     *     ['url' => 'http://example.com/image1.jpg', 'title' => 'Image title 1', 'link' => ''],
-     *     ['url' => 'http://example.com/image2.jpg', 'title' => 'Image title 2', 'link' => ''],
-     *     ['url' => 'http://example.com/image3.jpg'],
-     *     ['href' => 'http://example.com/page1.html', 'title' => 'Link title 1', 'text' => 'Link text 1']
+     *     [
+     *          'href' => 'http://example.com/page1.html',
+     *          'title' => 'Item title 1',
+     *          'description' => 'Item description',
+     *          'thumb' => 'http://example/image1.jpg',
+     *          'thumb_position' => Content::ADDITIONAL_CONTENT_THUMB_POSITION_LEFT,
+     *          'thumb_ratio' => Content::ADDITIONAL_CONTENT_THUMB_RATIO_1_1
+     *     ],
+     *     [
+     *          'href' => 'http://example.com/page2.html',
+     *          'title' => 'Item title 2'
+     *     ],
      * ]
      * @param string|null $title
      * @param string|null $orientation

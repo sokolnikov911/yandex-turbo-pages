@@ -106,7 +106,7 @@ At this time you can use helpers for generate next elements:
 * video from own server;
 * video from external server;
 * ad block position element;
-* media-content with slider,
+* media-content with slider;
 * additional content block.
 
 Examples of using helpers you can find in `examples/content_helpers.php`.
