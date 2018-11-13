@@ -31,12 +31,12 @@
   },
   "autoload": {
     "psr-4": {
-      "sokolnikov911\\YandexTurboPages\\": "src/sokolnikov911/YandexTurboPages/"
+      "sokolnikov911\\YandexTurboPages\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "sokolnikov911\\YandexTurboPages\\": "tests/sokolnikov911/YandexTurboPages/"
+      "sokolnikov911\\YandexTurboPages\\": "tests/"
     }
   }
 }
