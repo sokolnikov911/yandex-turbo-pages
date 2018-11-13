@@ -10,6 +10,7 @@ Dev-master
 * Enh: added adBlockPosition method into Content helper
 * Enh: added slider method into Content helper
 * Enh: added additionalContent method into Content helper
+* Enh: upgraded autoload to PSR-4
 
 1.1.1 July 10, 2018
 --------------------
