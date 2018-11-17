@@ -1,10 +1,6 @@
 Yandex Turbo Pages Change Log
 =============================
 
-dev-master
---------------------
-* Upd: using PHPUnit 7.4.*
-
 1.1.2 November 15, 2018
 --------------------
 * Enh: added accordion method into Content helper
