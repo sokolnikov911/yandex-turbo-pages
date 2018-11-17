@@ -14,9 +14,6 @@
         <log
                 type="coverage-clover"
                 target="tests/cover"
-                charset="UTF-8"
-                yui="true"
-                highlight="true"
                 lowUpperBound="50"
                 highLowerBound="80"/>
     </logging>
@@ -28,9 +25,6 @@
                 <directory suffix="Interface.php">src</directory>
             </exclude>
         </whitelist>
-        <blacklist>
-            <directory suffix=".php" group="PHPUNIT">vendor</directory>
-        </blacklist>
     </filter>
     <listeners>
         <listener class="\Mockery\Adapter\Phpunit\TestListener"
