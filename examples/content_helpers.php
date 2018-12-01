@@ -163,3 +163,8 @@ $items = [
     ],
 ];
 $additionalContent = Content::additionalContent($items, 'Title', Content::ADDITIONAL_CONTENT_ORIENTATION_HORIZONTAL);
+
+
+
+// generate search input
+$searchInput = Content::searchInput('http://example.com/search/{text}', 'Some placeholder');
