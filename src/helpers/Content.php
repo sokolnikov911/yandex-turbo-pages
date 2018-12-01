@@ -349,6 +349,19 @@ class Content
     }
 
     /**
+     * Generate search input
+     * @param string $searchUrl Search engine URL in format https://example.com/search/{text}
+     * @param string $placeholder
+     * @return string
+     */
+    public static function searchInput(string $searchUrl, string $placeholder = ''): string
+    {
+        $placeholder = $placeholder ? 'placeholder="' . $placeholder . '"'  : '';
+
+        return '<form action="' . $searchUrl . '" method="GET"><input type="search" name="text" ' . $placeholder . '/></form>';
+    }
+
+    /**
      * Generate content block for media slider
      * @param array $itemsArray Array of items with data
      * [
