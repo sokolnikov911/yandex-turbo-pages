@@ -3,6 +3,7 @@ Yandex Turbo Pages Change Log
 
 dev-master
 --------------------
+* Enh: added tests instrution for PHP7.3
 * Enh: added searchInput method into Content helper
 
 1.1.2 November 15, 2018
