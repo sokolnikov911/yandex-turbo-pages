@@ -46,7 +46,7 @@ build:
                         coverage:
                             file: 'tests/cover'
                             format: php-clover
-        php72:
+        php73:
             environment:
                 postgresql: false
                 redis: false
