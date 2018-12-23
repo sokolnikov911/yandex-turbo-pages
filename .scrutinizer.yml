@@ -46,12 +46,25 @@ build:
                         coverage:
                             file: 'tests/cover'
                             format: php-clover
+        php73:
+            environment:
+                postgresql: false
+                redis: false
+                php:
+                    version: 7.3.0
+            tests:
+                override:
+                    -
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
 
     environment:
         postgresql: false
         redis: false
         php:
-            version: 7.2
+            version: 7.3
     tests:
         override:
             -
