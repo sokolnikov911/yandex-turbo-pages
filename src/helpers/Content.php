@@ -366,7 +366,7 @@ class Content
         $contentString = '';
 
         $contentString .= $companyName ? ' data-agreement-company="' . $companyName . '"' : '';
-        $contentString .= $companyName ? ' data-agreement-link="' . $linkToAgreement . '"' : '';
+        $contentString .= $linkToAgreement ? ' data-agreement-link="' . $linkToAgreement . '"' : '';
 
         return '<form data-type="callback" data-send-to="' . $recipientEmail . '" ' . $contentString . '></form>';
     }
@@ -395,7 +395,7 @@ class Content
         $contentString = '';
 
         $contentString .= $companyName ? ' data-agreement-company="' . $companyName . '"' : '';
-        $contentString .= $companyName ? ' data-agreement-link="' . $linkToAgreement . '"' : '';
+        $contentString .= $linkToAgreement ? ' data-agreement-link="' . $linkToAgreement . '"' : '';
         $contentString .= $buttonColor ? ' data-background-color="' . $buttonColor . '"' : '';
         $contentString .= $textColor ? ' data-color="' . $textColor . '"' : '';
         $contentString .= $isBoldText ? ' data-primary="true"' : '';
