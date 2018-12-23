@@ -3,6 +3,8 @@ Yandex Turbo Pages Change Log
 
 dev-master
 --------------------
+* Enh: added modalCallbackForm method into Content helper
+* Enh: added inlineCallbackForm method into Content helper
 * Enh: added tests instrution for PHP7.3
 * Enh: added searchInput method into Content helper
 

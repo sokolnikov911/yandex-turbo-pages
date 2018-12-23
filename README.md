@@ -108,7 +108,9 @@ At this time you can use helpers for generate next elements:
 * ad block position element;
 * media-content with slider;
 * additional content block;
-* search input.
+* search input;
+* modal contact form;
+* inline contact form.
 
 Examples of using helpers you can find in `examples/content_helpers.php`.
 

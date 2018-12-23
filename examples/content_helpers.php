@@ -168,3 +168,32 @@ $additionalContent = Content::additionalContent($items, 'Title', Content::ADDITI
 
 // generate search input
 $searchInput = Content::searchInput('http://example.com/search/{text}', 'Some placeholder');
+
+
+
+// generate simple inline callback form
+$inlineCallbackForm = Content::inlineCallbackForm('someemail@domain.com');
+
+// generate inline callback form with company name
+$inlineCallbackForm = Content::inlineCallbackForm('someemail@domain.com', 'Company Name', 'http://domain.com/agreement.html');
+
+
+
+// generate simple modal callback form
+$modalCallbackForm = Content::modalCallbackForm('someemail@domain.com', 'Request callback');
+
+// generate modal callback form with company name
+$modalCallbackForm = Content::modalCallbackForm('someemail@domain.com', 'Request callback',
+    'Company Name', 'http://domain.com/agreement.html');
+
+// generate modal callback form with disabled button
+$modalCallbackForm = Content::modalCallbackForm('someemail@domain.com', 'Request callback', null, null,
+    null, null, null, true);
+
+// generate modal callback form with colored button
+$modalCallbackForm = Content::modalCallbackForm('someemail@domain.com', 'Request callback', null, null,
+    '#cccccc', '#fffff');
+
+// generate modal callback form with bold text on button
+$modalCallbackForm = Content::modalCallbackForm('someemail@domain.com', 'Request callback', null, null,
+    null, null, true);

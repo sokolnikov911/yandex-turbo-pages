@@ -37,6 +37,7 @@ class Content
     const ADDITIONAL_CONTENT_THUMB_RATIO_16_9 = '16x9';
     const ADDITIONAL_CONTENT_THUMB_RATIO_16_10 = '16x10';
 
+
     /**
      * Generate header element
      * @param string $h1
@@ -346,6 +347,61 @@ class Content
         $contentString .= '>';
 
         return $contentString . self::generateAdditionalContentItemsList($itemsArray) . '</div>';
+    }
+
+    /**
+     * Generate inline callback form
+     * @param string $recipientEmail
+     * @param string|null $companyName
+     * @param string|null $linkToAgreement
+     * @return string
+     * @throws \Exception
+     */
+    public static function inlineCallbackForm(string $recipientEmail, string $companyName = null, string $linkToAgreement = null): string
+    {
+        if (($companyName && !$linkToAgreement) || (!$companyName && $linkToAgreement)) {
+            throw new \Exception("You should use both 'companyName' and 'linkToAgreement' or nothing");
+        }
+
+        $contentString = '';
+
+        $contentString .= $companyName ? ' data-agreement-company="' . $companyName . '"' : '';
+        $contentString .= $companyName ? ' data-agreement-link="' . $linkToAgreement . '"' : '';
+
+        return '<form data-type="callback" data-send-to="' . $recipientEmail . '" ' . $contentString . '></form>';
+    }
+
+    /**
+     * Generate modal callback form
+     * @param string $recipientEmail
+     * @param string $buttonText
+     * @param string|null $companyName
+     * @param string|null $linkToAgreement
+     * @param string|null $buttonColor Can be Text or HEX
+     * @param string|null $textColor Can be Text or HEX
+     * @param bool $isBoldText
+     * @param bool $isDisabled
+     * @return string
+     * @throws \Exception
+     */
+    public static function modalCallbackForm(string $recipientEmail, string $buttonText, string $companyName = null, string $linkToAgreement = null,
+                                             string $buttonColor = null, string $textColor = null,
+                                             bool $isBoldText = false, bool $isDisabled = false): string
+    {
+        if (($companyName && !$linkToAgreement) || (!$companyName && $linkToAgreement)) {
+            throw new \Exception("You should use both 'companyName' and 'linkToAgreement' or nothing");
+        }
+
+        $contentString = '';
+
+        $contentString .= $companyName ? ' data-agreement-company="' . $companyName . '"' : '';
+        $contentString .= $companyName ? ' data-agreement-link="' . $linkToAgreement . '"' : '';
+        $contentString .= $buttonColor ? ' data-background-color="' . $buttonColor . '"' : '';
+        $contentString .= $textColor ? ' data-color="' . $textColor . '"' : '';
+        $contentString .= $isBoldText ? ' data-primary="true"' : '';
+        $contentString .= $isDisabled ? ' disabled="true"' : '';
+
+        return '<button data-send-to="' . $recipientEmail . '" ' . $contentString . '>' . $buttonText . '</button>';
     }
 
     /**
