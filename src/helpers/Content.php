@@ -359,7 +359,7 @@ class Content
      */
     public static function inlineCallbackForm(string $recipientEmail, string $companyName = null, string $linkToAgreement = null): string
     {
-        if (($companyName && !$linkToAgreement) || (!$companyName && $linkToAgreement)) {
+        if ((empty($companyName) && !empty($linkToAgreement)) || (!empty($companyName) && empty($linkToAgreement))) {
             throw new \Exception("You should use both 'companyName' and 'linkToAgreement' or nothing");
         }
 
@@ -388,7 +388,7 @@ class Content
                                              string $buttonColor = null, string $textColor = null,
                                              bool $isBoldText = false, bool $isDisabled = false): string
     {
-        if (($companyName && !$linkToAgreement) || (!$companyName && $linkToAgreement)) {
+        if ((empty($companyName) && !empty($linkToAgreement)) || (!empty($companyName) && empty($linkToAgreement))) {
             throw new \Exception("You should use both 'companyName' and 'linkToAgreement' or nothing");
         }
 
