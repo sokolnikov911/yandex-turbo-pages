@@ -16,9 +16,9 @@ build:
             tests:
                 override:
                     -
-                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover/coverage.xml'
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=/home/scrutinizer/build/tests/cover/coverage.xml'
                         coverage:
-                            file: 'tests/cover/coverage.xml'
+                            file: '/home/scrutinizer/build/tests/cover/coverage.xml'
                             format: clover
         php71:
             environment:
@@ -29,9 +29,9 @@ build:
             tests:
                 override:
                     -
-                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover/coverage.xml'
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=/home/scrutinizer/build/tests/cover/coverage.xml'
                         coverage:
-                            file: 'tests/cover/coverage.xml'
+                            file: '/home/scrutinizer/build/tests/cover/coverage.xml'
                             format: clover
         php72:
             environment:
@@ -42,9 +42,9 @@ build:
             tests:
                 override:
                     -
-                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover/coverage.xml'
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=/home/scrutinizer/build/tests/cover/coverage.xml'
                         coverage:
-                            file: 'tests/cover/coverage.xml'
+                            file: '/home/scrutinizer/build/tests/cover/coverage.xml'
                             format: clover
         php73:
             environment:
@@ -55,9 +55,9 @@ build:
             tests:
                 override:
                     -
-                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover/coverage.xml'
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=/home/scrutinizer/build/tests/cover/coverage.xml'
                         coverage:
-                            file: 'tests/cover/coverage.xml'
+                            file: '/home/scrutinizer/build/tests/cover/coverage.xml'
                             format: clover
 
     environment:
@@ -68,9 +68,9 @@ build:
     tests:
         override:
             -
-                command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover/coverage.xml'
+                command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=/home/scrutinizer/build/tests/cover/coverage.xml'
                 coverage:
-                    file: 'tests/cover/coverage.xml'
+                    file: '/home/scrutinizer/build/tests/cover/coverage.xml'
                     format: clover
 
 filter:
