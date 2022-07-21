@@ -19,7 +19,7 @@ build:
                         command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
-                            format: php-clover
+                            format: clover
         php71:
             environment:
                 postgresql: false
@@ -32,7 +32,7 @@ build:
                         command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
-                            format: php-clover
+                            format: clover
         php72:
             environment:
                 postgresql: false
@@ -45,7 +45,7 @@ build:
                         command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
-                            format: php-clover
+                            format: clover
         php73:
             environment:
                 postgresql: false
@@ -58,7 +58,7 @@ build:
                         command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                         coverage:
                             file: 'tests/cover'
-                            format: php-clover
+                            format: clover
 
     environment:
         postgresql: false
@@ -71,7 +71,7 @@ build:
                 command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
                 coverage:
                     file: 'tests/cover'
-                    format: php-clover
+                    format: clover
 
 filter:
     excluded_paths: [vendor/*, tests/*, examples/*]
