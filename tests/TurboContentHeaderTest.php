@@ -31,28 +31,28 @@ class TurboContentHeaderTest extends TestCase
         $this->assertAttributeSame($img, 'img', $header);
     }
 
-    public function testAsHTML()
-    {
-        libxml_use_internal_errors(true);
-
-        $data = $this->dataForHtml();
-        $header = new TurboContentHeader();
-        $header
-            ->titleH1($data['titleH1'])
-            ->titleH2($data['titleH2'])
-            ->img($data['img']);
-
-        $expectedHtml = '<header>Second title line<h1>First title line</h1><figure><img src="http://page.com/img.jpg"></figure></header>';
-        $expectedDom = new DOMDocument();
-        $expectedDom->loadHTML($expectedHtml);
-        $expectedDom->preserveWhiteSpace = false;
-
-        $actualDom = new DOMDocument();
-        $actualDom->loadHTML($header->asHTML());
-        $actualDom->preserveWhiteSpace = false;
-
-        $this->assertEquals($expectedDom->saveHTML(), $actualDom->saveHTML());
-    }
+//    public function testAsHTML()
+//    {
+//        libxml_use_internal_errors(true);
+//
+//        $data = $this->dataForHtml();
+//        $header = new TurboContentHeader();
+//        $header
+//            ->titleH1($data['titleH1'])
+//            ->titleH2($data['titleH2'])
+//            ->img($data['img']);
+//
+//        $expectedHtml = '<header>Second title line<h1>First title line</h1><figure><img src="http://page.com/img.jpg"></figure></header>';
+//        $expectedDom = new DOMDocument();
+//        $expectedDom->loadHTML($expectedHtml);
+//        $expectedDom->preserveWhiteSpace = false;
+//
+//        $actualDom = new DOMDocument();
+//        $actualDom->loadHTML($header->asHTML());
+//        $actualDom->preserveWhiteSpace = false;
+//
+//        $this->assertEquals($expectedDom->saveHTML(), $actualDom->saveHTML());
+//    }
 
     private function dataForHtml(): array
     {
